@@ -1,10 +1,15 @@
+import Index from "./components/home/hero";
+import {Route, Routes} from "react-router-dom";
+import Homepage from "./pages/homepage";
+import About from "./pages/aboutuspage";
 
 function App() {
 
   return (
-    <>
-      <h1 className="text-2xl font-bold text-black justify-center items-center">Selamat Mengoding :D</h1>
-    </>
+    <Routes>
+      <Route path="/" element={<Homepage />} />
+      <Route path="/about" element={  <About />} />
+    </Routes>
   )
 }
 
