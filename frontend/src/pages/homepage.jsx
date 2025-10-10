@@ -1,7 +1,13 @@
+import Hero from "../components/home/hero";
+import Navbar from "../components/Navbar";
+import Footer from "../components/footer";
+
 export default function Homepage() {
   return (
-    <>
-      <h1 className="text-2xl font-bold text-black justify-center items-center">INI HOMEPAGE</h1>
-    </>
-  )
+    <div>
+      <Navbar />
+      <Hero />
+      <Footer />
+    </div>
+  );
 }

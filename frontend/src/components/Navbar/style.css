@@ -1,0 +1,63 @@
+.navbar {
+  z-index: 9999;
+  background-color: #ffffff;
+}
+
+.navbar .text {
+  color: #030303;
+}
+
+.navbar .text:hover {
+  color: #636363;
+}
+
+.navbar .text-gradient {
+  color: #bb0001;
+}
+
+.navbar .text-gradient:hover{
+  color: #636363;
+}
+
+.navbar .hover-text:hover {
+  color: #030303;
+}
+
+.icon::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  border-bottom: 1px solid #ffffff;
+}
+
+.gotham{
+  font-family: "gotham", sans-serif;
+}
+
+.cinzel{
+  font-family: "Cinzel Decorative", sans-serif;
+}
+
+.cinzelbae{
+  font-family: "Cinzel", sans-serif;
+}
+
+@media (max-width: 660px) {
+  .menunav {
+    display: block;
+  }
+
+  .menunav-active {
+    width: full;
+    min-height: 100vh;
+  }
+}
+
+.side {
+  z-index: 50;
+  box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+  background: rgba(0, 0, 0, 0.8);
+}
