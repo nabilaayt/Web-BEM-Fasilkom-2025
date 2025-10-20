@@ -60,11 +60,7 @@ function App() {
         {/* Public Routes */}
         <Route
           path="/"
-          element={
-            <PublicLayout>
-              <Homepage />
-            </PublicLayout>
-          }
+          element={<Homepage />}
         />
         <Route
           path="/about"
