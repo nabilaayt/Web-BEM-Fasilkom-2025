@@ -1,0 +1,162 @@
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: #fff;
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+.navbarLogo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 40px;
+}
+
+.regular {
+  font-family: "Cinzel", cursive;
+}
+
+.decorativeBold {
+  font-family: "Cinzel Decorative", cursive;
+}
+
+.logoImage {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.navbarText {
+  font-family: "Cinzel", cursive;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #810001 4%, #c50202 45%, #bb0001 97%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.navbarMenu {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* Footer */
+.footer {
+  background-color: #3d0e0e;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: "Gotham Book", cursive;
+  font-size: 1rem;
+  margin-top: 40px;
+}
+
+.footerLogo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Cinzel", cursive;
+}
+
+.footerLogoText {
+  font-size: 0.75rem;
+}
+.footerLogoText span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.footerLogoImage {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 3000px;
+  margin: 0 auto;
+}
+
+.footerInfo {
+  margin-left: 5rem;
+}
+
+.footerNav {
+  margin-right: 5rem;
+}
+
+.footerInfo,
+.footerContact,
+.footerNav {
+  min-width: 200px;
+  text-align: start;
+  margin: 10px 0;
+}
+
+.footerInfo h2,
+.footerContact h3,
+.footerNav h3 {
+  font-family: "Gotham Medium", cursive;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.footerContact a,
+.footerInfo p {
+  margin-bottom: 8px;
+  font-size: 0.875rem;
+}
+
+.footerLogo {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+.footerNav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.footerInfo p {
+  text-align: justify;
+}
+
+.footerContact li,
+.footerNav li {
+  margin-bottom: 4px;
+}
+
+.footerNav a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footerNav a:hover {
+  color: #ffc107;
+}
+
+.footerBottom {
+  font-family: "Gotham Medium", cursive;
+  margin-top: 40px;
+  font-size: 1rem;
+  color: #fff;
+}
