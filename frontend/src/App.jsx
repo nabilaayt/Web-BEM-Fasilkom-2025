@@ -7,8 +7,8 @@ import Homepage from "./pages/homepage";
 import About from "./pages/aboutuspage";
 import Login from "./pages/Login";
 
-import Navbar from "./components/N_F/navbar";
-import Footer from "./components/N_F/footer";
+import Navbar from "./components/N_F/Navbar/Navbar";
+import Footer from "./components/N_F/Footer/Footer";
 
 import Dashboard from "./pages/admin/dashboard";
 import ManageStaff from "./pages/admin/manageStaff";

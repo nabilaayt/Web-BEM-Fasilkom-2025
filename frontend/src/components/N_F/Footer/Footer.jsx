@@ -1,6 +1,6 @@
 import React from "react";
-import logo from "../../assets/Logo/Logo-BEM.png";
-import styles from "./Style.css";
+import logo from "../../../Assets/Logo/Logo-Bem.png";
+import styles from "./Style.module.css";
 
 const Footer = () => {
   return (
