@@ -76,10 +76,10 @@ export const createPengurusBem = async (req, res) => {
     return res.status(422).json({ msg: "Format gambar tidak valid" });
   }
 
-  if (fileSize > 5000000) {
+  if (fileSize > 10485760) {
     return res
       .status(422)
-      .json({ msg: "Ukuran gambar harus kurang dari 5 MB" });
+      .json({ msg: "Ukuran gambar harus kurang atau lebih dari 10 MB" });
   }
 
   file.mv(`./public/images/${fileName}`, async (err) => {
