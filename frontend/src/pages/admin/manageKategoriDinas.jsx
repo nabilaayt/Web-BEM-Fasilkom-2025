@@ -266,7 +266,7 @@ const ManageKategoriDinas = () => {
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                     required
                   >
-                    <option value="">Pilih Bidang (Opsional)</option>
+                    <option value="">Pilih Bidang</option>
                     {bidang.map((item) => (
                       <option key={item.id} value={item.id}>
                         {item.nama_bidang}
