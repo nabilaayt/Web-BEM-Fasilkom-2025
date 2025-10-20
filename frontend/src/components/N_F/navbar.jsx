@@ -10,10 +10,10 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const navItems = [
-    { name: 'Beranda', path: '/' },
-    { name: 'Berita', path: '/berita' },
-    { name: 'Dinas & Bidang', path: '/dinas' },
-    { name: 'Tentang', path: '/tentang' },
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+    { name: 'Profile', path: '/profile' },
+    { name: 'Bem Apps', path: '/bemApps' },
   ];
 
   return (
