@@ -51,6 +51,18 @@ const dinasService = {
     return response.data;
   },
 
+  // Get members by dinas ID
+  getDinasMembers: async (dinasId) => {
+    const response = await api.get(`/pengurus-bem/dinas/${dinasId}`);
+    return response.data;
+  },
+
+  // Get dinas info by ID
+  getDinasInfo: async (dinasId) => {
+    const response = await api.get(`/kategori-dinas/${dinasId}`);
+    return response.data;
+  },
+
   // Create kategori dinas
   createKategoriDinas: async (data) => {
     const response = await api.post('/kategori-dinas', data);

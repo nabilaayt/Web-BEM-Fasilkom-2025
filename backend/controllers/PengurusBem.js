@@ -343,6 +343,64 @@ const removeEmptyFolders = (folderPath) => {
   }
 };
 
+export const getPengurusByDinas = async (req, res) => {
+  try {
+    const kategoriDinasId = req.params.dinasId;
+
+    // Validasi kategori dinas exists
+    const kategoriDinas = await KategoriDinas.findOne({
+      where: { id: kategoriDinasId },
+      include: [{ model: Bidang, as: "bidang" }],
+    });
+
+    if (!kategoriDinas) {
+      return res.status(404).json({ msg: "Dinas tidak ditemukan" });
+    }
+
+    // Ambil semua pengurus untuk dinas tersebut
+    const pengurus = await PengurusBem.findAll({
+      where: {
+        kategoriDinasId: kategoriDinasId,
+      },
+      order: [
+        ['jabatan', 'ASC'], // BPH akan muncul duluan
+        ['divisi', 'ASC'],  // Urutkan per divisi
+        ['nama', 'ASC'],    // Urutkan per nama
+      ],
+      include: [
+        {
+          model: KategoriDinas,
+          as: "kategori_dinas",
+          include: [
+            {
+              model: Bidang,
+              as: "bidang",
+            },
+          ],
+        },
+      ],
+    });
+
+    // Transform data sebelum kirim ke client
+    const transformedPengurus = pengurus.map(p => ({
+      uuid: p.uuid,
+      nama: p.nama,
+      jabatan: p.jabatan,
+      divisi: p.divisi,
+      foto: p.foto,
+      url: `${req.protocol}://${req.get("host")}/images/${p.foto}`,
+      dinasInfo: {
+        nama: p.kategori_dinas.nama_dinas,
+        bidang: p.kategori_dinas.bidang.nama_bidang,
+      }
+    }));
+
+    res.status(200).json(transformedPengurus);
+  } catch (error) {
+    res.status(500).json({ msg: error.message });
+  }
+};
+
 export const deletePengurusBem = async (req, res) => {
   try {
     const pengurus = await PengurusBem.findOne({
