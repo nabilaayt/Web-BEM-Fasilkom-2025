@@ -27,7 +27,8 @@ const AddDinas = () => {
     try {
       const data = await dinasService.getAllKategoriDinas();
       setKategoriDinas(data);
-    } catch (error) {
+    } catch (err) {
+      console.error(err);
       toast.error("Gagal memuat kategori dinas");
     }
   };

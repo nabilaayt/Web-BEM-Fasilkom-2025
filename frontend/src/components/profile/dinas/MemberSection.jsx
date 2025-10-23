@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MemberCard from './MemberCard';
 
-const MemberSection = ({ title, members }) => {
+const MemberSection = ({ title, members, dinasLabel = 'DINAS' }) => {
   return (
     <div className="py-8">
       <h2 className="text-2xl font-bold text-center mb-8">
@@ -15,6 +15,7 @@ const MemberSection = ({ title, members }) => {
             name={member.nama}
             position={member.divisi}
             imageUrl={member.url}
+            label={dinasLabel}
           />
         ))}
       </div>
@@ -32,6 +33,7 @@ MemberSection.propTypes = {
       url: PropTypes.string.isRequired,
     })
   ).isRequired,
+  dinasLabel: PropTypes.string,
 };
 
 export default MemberSection;

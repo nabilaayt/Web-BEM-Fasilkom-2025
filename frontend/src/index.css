@@ -1,2 +1,5 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* url font atau customize color bisa ditambahkan disini */
-@import "tailwindcss";

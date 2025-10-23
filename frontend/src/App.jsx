@@ -76,6 +76,14 @@ function App() {
           }
         />
         <Route
+          path="/profile"
+          element={
+            <PublicLayout>
+              <DinasProfilePage />
+            </PublicLayout>
+          }
+        />
+        <Route
           path="/about"
           element={
             <PublicLayout>

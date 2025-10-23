@@ -23,7 +23,8 @@ const ManageBidang = () => {
     try {
       const data = await dinasService.getAllBidang();
       setBidang(data);
-    } catch (error) {
+    } catch (err) {
+      console.error(err);
       toast.error('Gagal memuat data bidang');
     } finally {
       setLoading(false);
@@ -44,8 +45,9 @@ const ManageBidang = () => {
       
       resetForm();
       fetchBidang();
-    } catch (error) {
-      const message = error.response?.data?.msg || 'Gagal menyimpan bidang';
+    } catch (err) {
+      console.error(err);
+      const message = err.response?.data?.msg || 'Gagal menyimpan bidang';
       toast.error(message);
     }
   };
@@ -66,7 +68,8 @@ const ManageBidang = () => {
         await dinasService.deleteBidang(id);
         toast.success('Bidang berhasil dihapus');
         fetchBidang();
-      } catch (error) {
+      } catch (err) {
+        console.error(err);
         toast.error('Gagal menghapus bidang');
       }
     }

@@ -1,11 +1,7 @@
 import axios from 'axios';
 
-let base = import.meta.env.VITE_API_URL || 'http://localhost:5000';
-// ensure trailing /api
-if (!base.replace(/\/+$/, '').endsWith('/api')) {
-  base = base.replace(/\/+$/, '') + '/api';
-}
-const API_URL = base;
+const base = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_URL = base.replace(/\/+$/, '') + '/api';
 const api = axios.create({
   baseURL: API_URL,
   withCredentials: true,

@@ -24,13 +24,15 @@ const EditDinas = () => {
   useEffect(() => {
     fetchKategoriDinas();
     fetchPengurusData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   const fetchKategoriDinas = async () => {
     try {
       const data = await dinasService.getAllKategoriDinas();
       setKategoriDinas(data);
-    } catch (error) {
+    } catch (err) {
+      console.error(err);
       toast.error("Gagal memuat kategori dinas");
     }
   };
@@ -46,7 +48,8 @@ const EditDinas = () => {
         foto: null,
       });
       setCurrentFoto(data.foto);
-    } catch (error) {
+    } catch (err) {
+      console.error(err);
       toast.error("Gagal memuat data pengurus");
       navigate("/admin/manage-staff");
     }
