@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { CiMenuBurger } from "react-icons/ci";
 import "./style.css";
-import logo from "../../../Assets/Logo/Logo-Bem.png";
+import logo from "../../../Assets/Logo/Logo-BEM.png";
 import { useAuth } from "../../../utils/authContext"; // pastikan ada
 
 const Navbar = () => {
