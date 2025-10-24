@@ -3,6 +3,7 @@ import MemberCard from '../../components/profile/dinas/MemberCard';
 import ProfileHero from '../../components/profile/profile_hero';
 import BidangTabs from '../../components/profile/BidangTabs';
 import DinasLogo from '../../components/profile/DinasLogo';
+import StaffCarousel from '../../components/profile/StaffCarousel';
 import dinasService from '../../services/dinasService';
 
 const RelasiPage = () => {
@@ -85,7 +86,7 @@ const RelasiPage = () => {
       <BidangTabs />
 
       {/* Page-specific header */}
-      <div className="bg-gradient-to-r from-red-900 to-red-800 text-white py-8">
+      <div className="py-8">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-2">Bidang Relasi</h1>
           <p className="text-lg max-w-3xl mx-auto">
@@ -158,17 +159,7 @@ const RelasiPage = () => {
                 <h3 className="text-2xl font-semibold text-center mb-8 text-gray-800">
                   Staff
                 </h3>
-                <div className="flex flex-wrap justify-center gap-6">
-                  {dinas.staff.map((member) => (
-                    <MemberCard
-                      key={member.uuid}
-                      name={member.nama}
-                      position={member.divisi}
-                      imageUrl={member.url}
-                      label="STAFF"
-                    />
-                  ))}
-                </div>
+                <StaffCarousel staff={dinas.staff} dinasName={dinas.nama_dinas} />
               </div>
             )}
           </div>

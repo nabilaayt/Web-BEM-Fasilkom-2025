@@ -3,6 +3,7 @@ import MemberCard from '../../components/profile/dinas/MemberCard';
 import ProfileHero from '../../components/profile/profile_hero';
 import BidangTabs from '../../components/profile/BidangTabs';
 import DinasLogo from '../../components/profile/DinasLogo';
+import StaffCarousel from '../../components/profile/StaffCarousel';
 import dinasService from '../../services/dinasService';
 
 const KerumahtanggaanPage = () => {
@@ -164,17 +165,7 @@ const KerumahtanggaanPage = () => {
                 <h3 className="text-2xl font-semibold text-center mb-8 text-gray-800">
                   Staff
                 </h3>
-                <div className="flex flex-wrap justify-center gap-6">
-                  {dinas.staff.map((member) => (
-                    <MemberCard
-                      key={member.uuid}
-                      name={member.nama}
-                      position={member.divisi}
-                      imageUrl={member.url}
-                      label="STAFF"
-                    />
-                  ))}
-                </div>
+                <StaffCarousel staff={dinas.staff} dinasName={dinas.nama_dinas} />
               </div>
             )}
           </div>

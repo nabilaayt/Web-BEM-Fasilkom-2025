@@ -30,11 +30,20 @@ Refactoring ini memisahkan halaman profile yang sebelumnya kompleks menjadi stru
 - Error handling untuk logo yang tidak ditemukan
 - Saat ini mendukung logo Medinfo, dapat ditambahkan logo dinas lainnya
 
-### 5. Navbar Kembali ke Fungsi Asli
+### 5. Komponen Staff Carousel
+- **StaffCarousel.jsx** - Komponen carousel untuk menampilkan member card staff
+- Membatasi tampilan maksimal 6 staff per halaman
+- Navigasi dengan tombol panah kiri/kanan
+- Page indicators (dots) untuk navigasi langsung
+- Responsive grid layout (1-6 kolom tergantung ukuran layar)
+- Smooth transition animation dengan CSS transform
+- Auto-loop navigation (dari halaman terakhir ke halaman pertama)
+
+### 6. Navbar Kembali ke Fungsi Asli
 - Navbar dikembalikan ke fungsi aslinya tanpa dropdown untuk Profile
 - Menu Profile tetap mengarah ke halaman overview
 
-### 6. Routing Update
+### 7. Routing Update
 - Menambahkan route untuk setiap halaman bidang: `/profile/inti`, `/profile/media-teknologi`, dll.
 - Route `/profile` tetap mengarah ke halaman overview
 
@@ -64,6 +73,7 @@ src/
 │       ├── BidangTabs/
 │       │   └── index.jsx (EXISTING)
 │       ├── DinasLogo.jsx (NEW)
+│       ├── StaffCarousel.jsx (NEW)
 │       ├── profile_hero/
 │       └── dinas/
 └── pages/
