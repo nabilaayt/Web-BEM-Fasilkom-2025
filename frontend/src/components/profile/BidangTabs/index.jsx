@@ -1,9 +1,8 @@
 import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const BidangTabs = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
+  // navigation handled by NavLink; no hooks needed here
 
   const bidangTabs = [
     { name: 'Inti', path: '/profile', shortName: 'Inti' },
@@ -14,38 +13,33 @@ const BidangTabs = () => {
     { name: 'Minbat', path: '/profile/minbat', shortName: 'Minbat' },
   ];
 
-  const handleTabClick = (path) => {
-    navigate(path);
-  };
-
-  const isActive = (path) => {
-    return location.pathname === path;
-  };
-
   return (
-    <div className="bg-white py-8">
+    <div className="bg-white py-6">
       <div className="container mx-auto px-4">
         {/* Title */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">Faces of Artha Darma</h1>
+        <div className="text-center mb-6">
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">Faces of <span className="text-[#4A0000]">Artha Darma</span></h1>
         </div>
 
-        {/* Tabs Navigation */}
-        <div className="flex justify-center gap-2 mb-8 flex-wrap">
-          {bidangTabs.map((tab) => (
-            <button
-              key={tab.path}
-              onClick={() => handleTabClick(tab.path)}
-              className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
-                isActive(tab.path)
-                  ? 'bg-red-900 text-white shadow-lg transform scale-105'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-gray-900'
-              }`}
-            >
-              {tab.shortName}
-            </button>
-          ))}
-        </div>
+        {/* Navbar-style text links */}
+        <nav aria-label="Bidang navigation" className="mb-6">
+          <ul className="flex justify-center items-center gap-10 flex-wrap">
+            {bidangTabs.map((tab) => (
+              <li key={tab.path}>
+                <NavLink
+                  to={tab.path}
+                  end={tab.path === '/profile'} 
+                  className={({ isActive }) =>
+                    `text-base transition-colors duration-150 ${isActive ? 'font-bold' : 'font-medium text-gray-700 hover:text-gray-900'}`
+                  }
+                  style={({ isActive }) => (isActive ? { color: '#4A0000' } : undefined)}
+                >
+                  {tab.shortName}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </div>
   );

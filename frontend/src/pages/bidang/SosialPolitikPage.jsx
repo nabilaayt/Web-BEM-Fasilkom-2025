@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import MemberCard from '../../components/profile/dinas/MemberCard';
 import ProfileHero from '../../components/profile/profile_hero';
 import BidangTabs from '../../components/profile/BidangTabs';
+import DinasLogo from '../../components/profile/DinasLogo';
 import dinasService from '../../services/dinasService';
 
 const SosialPolitikPage = () => {
@@ -124,6 +125,9 @@ const SosialPolitikPage = () => {
           <div key={dinas.id} className="mb-16">
             {/* Dinas Header */}
             <div className="text-center mb-12">
+              {/* Dinas Logo */}
+              <DinasLogo dinasName={dinas.nama_dinas} />
+              
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Dinas {dinas.nama_dinas}</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
                 {dinas.nama_dinas && dinas.nama_dinas.toLowerCase() === 'adper' 

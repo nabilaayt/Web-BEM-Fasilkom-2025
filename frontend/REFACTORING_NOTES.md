@@ -17,16 +17,24 @@ Refactoring ini memisahkan halaman profile yang sebelumnya kompleks menjadi stru
 - **ProfileOverviewPage.jsx** - Halaman utama yang menampilkan semua bidang dengan navigasi
 
 ### 3. Komponen Tab Navigation
-- **BidangTabs.jsx** - Komponen tab navigation yang memungkinkan perpindahan antar bidang
-- Menggunakan design yang sesuai dengan gambar UI/UX yang diberikan
-- Tab aktif ditandai dengan warna merah (red-900) dan efek scale
+- **BidangTabs/index.jsx** - Komponen tab navigation yang memungkinkan perpindahan antar bidang
+- Menggunakan NavLink untuk navigasi yang lebih smooth
+- Tab aktif ditandai dengan warna merah (#4A0000) dan font bold
 - Tab tidak aktif menggunakan warna abu-abu dengan hover effect
+- Menggunakan struktur navbar-style dengan ul/li
 
-### 4. Navbar Kembali ke Fungsi Asli
+### 4. Komponen Logo Dinas
+- **DinasLogo.jsx** - Komponen untuk menampilkan logo dinas di atas nama dinas
+- Menggunakan import static untuk logo dari folder Assets/Logo
+- Logo ditampilkan dalam container bulat dengan shadow
+- Error handling untuk logo yang tidak ditemukan
+- Saat ini mendukung logo Medinfo, dapat ditambahkan logo dinas lainnya
+
+### 5. Navbar Kembali ke Fungsi Asli
 - Navbar dikembalikan ke fungsi aslinya tanpa dropdown untuk Profile
 - Menu Profile tetap mengarah ke halaman overview
 
-### 5. Routing Update
+### 6. Routing Update
 - Menambahkan route untuk setiap halaman bidang: `/profile/inti`, `/profile/media-teknologi`, dll.
 - Route `/profile` tetap mengarah ke halaman overview
 
@@ -53,7 +61,9 @@ Refactoring ini memisahkan halaman profile yang sebelumnya kompleks menjadi stru
 src/
 ├── components/
 │   └── profile/
-│       ├── BidangTabs.jsx (NEW)
+│       ├── BidangTabs/
+│       │   └── index.jsx (EXISTING)
+│       ├── DinasLogo.jsx (NEW)
 │       ├── profile_hero/
 │       └── dinas/
 └── pages/

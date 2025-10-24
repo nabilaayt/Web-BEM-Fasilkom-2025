@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import MemberCard from '../../components/profile/dinas/MemberCard';
 import ProfileHero from '../../components/profile/profile_hero';
 import BidangTabs from '../../components/profile/BidangTabs';
+import DinasLogo from '../../components/profile/DinasLogo';
 import dinasService from '../../services/dinasService';
 
 const KerumahtanggaanPage = () => {
@@ -77,7 +78,7 @@ const KerumahtanggaanPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-100 to-white">
+    <div className="min-h-screen bg-white">
       {/* Default shared Profile Hero */}
       <ProfileHero />
 
@@ -85,7 +86,7 @@ const KerumahtanggaanPage = () => {
       <BidangTabs />
 
       {/* Page-specific header */}
-      <div className="bg-gradient-to-r from-red-900 to-red-800 text-white py-8">
+      <div className="py-8">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-2">Bidang Kerumahtanggaan</h1>
           <p className="text-lg max-w-3xl mx-auto">
@@ -123,10 +124,15 @@ const KerumahtanggaanPage = () => {
           <div key={dinas.id} className="mb-16">
             {/* Dinas Header */}
             <div className="text-center mb-12">
+              {/* Dinas Logo */}
+              <DinasLogo dinasName={dinas.nama_dinas} />
+              
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Dinas {dinas.nama_dinas}</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
                 {dinas.nama_dinas && dinas.nama_dinas.toLowerCase() === 'ppsdm' 
-                  ? 'Dinas yang mengelola pengembangan sumber daya manusia, pelatihan, dan peningkatan kapasitas anggota BEM KM Fasilkom UNSRI.'
+                  ? 'Dinas PPSDM berperan dalam menumbuhkan rasa kekeluargaan, memanajemen sumber daya manusia serta bertanggung jawab atas kaderisasi pada seluruh elemen BEM KM Fasilkom Unsri.'
+                  : dinas.nama_dinas && dinas.nama_dinas.toLowerCase() === 'administrasi'
+                  ? 'Dinas Administrasi merupakan dinas yang bertanggung jawab dalam mengelola surat menyurat terkait administrasi pada bidang kesekretariatan, serta alur keuangan internal BEM KM Fasilkom Unsri.'
                   : `Deskripsi untuk Dinas ${dinas.nama_dinas}`
                 }
               </p>

@@ -3,6 +3,7 @@ import MemberCard from '../../components/profile/dinas/MemberCard';
 import dinasService from '../../services/dinasService';
 import ProfileHero from '../../components/profile/profile_hero';
 import BidangTabs from '../../components/profile/BidangTabs';
+import DinasLogo from '../../components/profile/DinasLogo';
 
 const MediaTeknologiPage = () => {
   const [koorbidMembers, setKoorbidMembers] = useState([]);
@@ -77,7 +78,7 @@ const MediaTeknologiPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-100 to-white">
+    <div className="min-h-screen bg-white">
       {/* Reusable Profile Hero (default, no page-specific text here) */}
       <ProfileHero />
 
@@ -85,7 +86,7 @@ const MediaTeknologiPage = () => {
       <BidangTabs />
 
       {/* Page-specific header (each bidang handles its own title/description) */}
-      <div className="bg-gradient-to-r from-red-900 to-red-800 text-white py-8">
+      <div className="py-8">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-2">Bidang Media & Teknologi</h1>
           <p className="text-lg max-w-3xl mx-auto">
@@ -123,6 +124,9 @@ const MediaTeknologiPage = () => {
           <div key={dinas.id} className="mb-16">
             {/* Dinas Header */}
             <div className="text-center mb-12">
+              {/* Dinas Logo */}
+              <DinasLogo dinasName={dinas.nama_dinas} />
+              
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Dinas {dinas.nama_dinas}</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
                 {dinas.nama_dinas && dinas.nama_dinas.toLowerCase() === 'medinfo' 

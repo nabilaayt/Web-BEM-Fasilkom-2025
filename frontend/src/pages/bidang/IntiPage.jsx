@@ -54,7 +54,7 @@ const IntiPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-100 to-white">
+    <div className="min-h-screen bg-white">
       {/* Default shared Profile Hero */}
       <ProfileHero />
 
