@@ -8,6 +8,14 @@ import About from "./pages/aboutuspage";
 import Login from "./pages/Login";
 import DinasProfilePage from "./pages/DinasProfilePage";
 
+// Import bidang pages
+import IntiPage from "./pages/bidang/IntiPage";
+import MediaTeknologiPage from "./pages/bidang/MediaTeknologiPage";
+import KerumahtanggaanPage from "./pages/bidang/KerumahtanggaanPage";
+import SosialPolitikPage from "./pages/bidang/SosialPolitikPage";
+import RelasiPage from "./pages/bidang/RelasiPage";
+import MinbatPage from "./pages/bidang/MinbatPage";
+
 import Navbar from "./components/N_F/Navbar/Navbar";
 import Footer from "./components/N_F/Footer/Footer";
 
@@ -79,7 +87,50 @@ function App() {
           path="/profile"
           element={
             <PublicLayout>
-              <DinasProfilePage />
+              <IntiPage />
+            </PublicLayout>
+          }
+        />
+        
+        {/* Bidang Routes */}
+        {/* /profile/inti removed — /profile is canonical and shows Inti by default */}
+        <Route
+          path="/profile/media-teknologi"
+          element={
+            <PublicLayout>
+              <MediaTeknologiPage />
+            </PublicLayout>
+          }
+        />
+        <Route
+          path="/profile/kerumahtanggaan"
+          element={
+            <PublicLayout>
+              <KerumahtanggaanPage />
+            </PublicLayout>
+          }
+        />
+        <Route
+          path="/profile/sosial-politik"
+          element={
+            <PublicLayout>
+              <SosialPolitikPage />
+            </PublicLayout>
+          }
+        />
+        <Route
+          path="/profile/relasi"
+          element={
+            <PublicLayout>
+              <RelasiPage />
+            </PublicLayout>
+          }
+        />
+        <Route
+          path="/profile/minbat"
+          element={
+            <PublicLayout>
+              <MinbatPage />
             </PublicLayout>
           }
         />

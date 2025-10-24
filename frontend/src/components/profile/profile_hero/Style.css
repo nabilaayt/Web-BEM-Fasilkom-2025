@@ -1,0 +1,6 @@
+/* small custom styles for the profile hero mosaic (complements Tailwind) */
+.profile-hero .mosaic {
+  position: relative;
+}
+
+/* nothing heavy here - using Tailwind primarily */
