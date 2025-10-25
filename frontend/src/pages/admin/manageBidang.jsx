@@ -210,26 +210,9 @@ const ManageBidang = () => {
                     value={formData.nama_bidang}
                     onChange={handleNamaBidangChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                    placeholder="Contoh: Bidang Kementerian"
+                    placeholder="Contoh: Bidang Media & Teknologi"
                     required
                   />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Slug <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    value={formData.slug}
-                    onChange={(e) => setFormData({ ...formData, slug: e.target.value })}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent bg-gray-50"
-                    placeholder="bidang-kementerian"
-                    required
-                  />
-                  <p className="text-xs text-gray-500 mt-1">
-                    Slug akan dibuat otomatis dari nama bidang
-                  </p>
                 </div>
 
                 <div className="flex gap-3 pt-4">

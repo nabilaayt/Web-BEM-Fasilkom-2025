@@ -51,8 +51,8 @@ const AddDinas = () => {
       }
 
       // Validate file size (5MB)
-      if (file.size > 5000000) {
-        toast.error("Ukuran file maksimal 5MB");
+      if (file.size > 10485760) {
+        toast.error("Ukuran file maksimal 10MB");
         return;
       }
 
@@ -178,7 +178,7 @@ const AddDinas = () => {
                 value={formData.divisi}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                placeholder="Contoh: Divisi Media & Informasi"
+                placeholder="Contoh: Divisi Akademik"
                 required
               />
             </div>
@@ -228,7 +228,7 @@ const AddDinas = () => {
                       Klik untuk upload foto
                     </span>
                     <span className="text-sm text-gray-500">
-                      PNG, JPG, JPEG (Max 5MB)
+                      PNG, JPG, JPEG (Max 10MB)
                     </span>
                   </label>
                 </div>

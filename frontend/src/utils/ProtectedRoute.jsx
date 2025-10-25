@@ -1,5 +1,5 @@
-import { Navigate } from 'react-router-dom';
-import { useAuth } from '../utils/authContext';
+import { Navigate } from "react-router-dom";
+import { useAuth } from "../utils/authContext";
 
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated, loading } = useAuth();
@@ -12,8 +12,8 @@ const ProtectedRoute = ({ children }) => {
     );
   }
 
-  // Kalau belum login, baru redirect ke /login
-  if (!isAuthenticated) {
+  /// Hanya redirect ke /login kalau sedang di route admin
+  if (!isAuthenticated && location.pathname.startsWith("/admin")) {
     return <Navigate to="/login" replace />;
   }
 
