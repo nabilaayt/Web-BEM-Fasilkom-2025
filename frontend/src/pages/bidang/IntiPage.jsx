@@ -4,6 +4,7 @@ import MemberCard from '../../components/profile/dinas/MemberCard';
 import ProfileHero from '../../components/profile/profile_hero';
 import BidangTabs from '../../components/profile/BidangTabs';
 import dinasService from '../../services/dinasService';
+import { orderMembers } from '../../utils/memberOrdering';
 
 const IntiPage = () => {
   const [members, setMembers] = useState([]);
@@ -29,8 +30,10 @@ const IntiPage = () => {
             const members = await dinasService.getDinasMembers(kategori.id);
             allMembers.push(...(members || []));
           }
-          
-          setMembers(allMembers);
+
+          // For bidang Inti, prioritize Ketua and Wakil first
+          const ordered = orderMembers(allMembers, ['ketua', 'wakil']);
+          setMembers(ordered);
         }
       } catch (error) {
         console.error('Error fetching Inti members:', error);

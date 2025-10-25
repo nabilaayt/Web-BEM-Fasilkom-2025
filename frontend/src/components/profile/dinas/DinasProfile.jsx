@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import MemberSection from './MemberSection';
 import dinasService from '../../../services/dinasService';
+import { orderMembers } from '../../../utils/memberOrdering';
 
 const DinasProfile = () => {
   const [bidangList, setBidangList] = useState([]);
@@ -63,10 +64,14 @@ const DinasProfile = () => {
       try {
         const members = await dinasService.getDinasMembers(selectedDinas);
         const all = members || [];  // backend returns jabatan enum values 'BPH' or 'Staff'
-        const bph = all.filter(m => (m.jabatan || '').toLowerCase() === 'bph');
-        const staff = all.filter(m => (m.jabatan || '').toLowerCase() === 'staff');
+  const bph = all.filter(m => (m.jabatan || '').toLowerCase() === 'bph');
+  const staff = all.filter(m => (m.jabatan || '').toLowerCase() === 'staff');
 
-        setMembers({ bph, staff });
+  // Reorder so that Kepala/Ketua appear first, Deputi/Wakil second
+  const orderedBph = orderMembers(bph);
+  const orderedStaff = orderMembers(staff);
+
+  setMembers({ bph: orderedBph, staff: orderedStaff });
       } catch (err) {
         console.error('Error fetching members for dinas:', err);
         setMembers({ bph: [], staff: [] });

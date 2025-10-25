@@ -5,6 +5,7 @@ import BidangTabs from '../../components/profile/BidangTabs';
 import DinasLogo from '../../components/profile/DinasLogo';
 import StaffCarousel from '../../components/profile/StaffCarousel';
 import dinasService from '../../services/dinasService';
+import { orderMembers } from '../../utils/memberOrdering';
 
 const KerumahtanggaanPage = () => {
   const [koorbidMembers, setKoorbidMembers] = useState([]);
@@ -51,8 +52,8 @@ const KerumahtanggaanPage = () => {
             
             dinasData.push({
               ...kategori,
-              bph: bphMembers,
-              staff: staffMembers
+              bph: orderMembers(bphMembers),
+              staff: orderMembers(staffMembers)
             });
           }
           setDinasList(dinasData);

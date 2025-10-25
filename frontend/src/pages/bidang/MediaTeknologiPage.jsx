@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import MemberCard from '../../components/profile/dinas/MemberCard';
 import dinasService from '../../services/dinasService';
+import { orderMembers } from '../../utils/memberOrdering';
 import ProfileHero from '../../components/profile/profile_hero';
 import BidangTabs from '../../components/profile/BidangTabs';
 import DinasLogo from '../../components/profile/DinasLogo';
@@ -51,8 +52,8 @@ const MediaTeknologiPage = () => {
             
             dinasData.push({
               ...kategori,
-              bph: bphMembers,
-              staff: staffMembers
+              bph: orderMembers(bphMembers),
+              staff: orderMembers(staffMembers)
             });
           }
           setDinasList(dinasData);

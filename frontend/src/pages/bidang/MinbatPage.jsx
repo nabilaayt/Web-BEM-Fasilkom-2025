@@ -5,6 +5,7 @@ import BidangTabs from '../../components/profile/BidangTabs';
 import DinasLogo from '../../components/profile/DinasLogo';
 import StaffCarousel from '../../components/profile/StaffCarousel';
 import dinasService from '../../services/dinasService';
+import { orderMembers } from '../../utils/memberOrdering';
 
 const MinbatPage = () => {
   const [koorbidMembers, setKoorbidMembers] = useState([]);
@@ -14,11 +15,22 @@ const MinbatPage = () => {
   useEffect(() => {
     const fetchMinbatData = async () => {
       try {
-        // Fetch all bidang to find Minbat
+        // Fetch all bidang to find Minbat (robust matching: check slug and keywords)
         const bidangList = await dinasService.getAllBidang();
-        const minbatBidang = bidangList.find(bidang => 
-          bidang.nama_bidang.toLowerCase().includes('minbat')
-        );
+        const minKeywords = ['minat', 'bakat', 'minat & bakat', 'minat dan bakat', 'minbat'];
+        const minbatBidang = bidangList.find(bidang => {
+          const slug = (bidang.slug || '').toLowerCase();
+          const name = (bidang.nama_bidang || '').toLowerCase();
+
+          // direct slug matches
+          if (slug === 'minbat' || slug === 'minat-dan-bakat' || slug === 'minat-bakat') return true;
+
+          // keyword matches in slug or name (contains 'minat' or 'bakat')
+          if (minKeywords.some(k => slug.includes(k))) return true;
+          if (minKeywords.some(k => name.includes(k))) return true;
+
+          return false;
+        });
 
         if (minbatBidang) {
           // Fetch all kategori dinas for Minbat bidang
@@ -50,8 +62,8 @@ const MinbatPage = () => {
             
             dinasData.push({
               ...kategori,
-              bph: bphMembers,
-              staff: staffMembers
+              bph: orderMembers(bphMembers),
+              staff: orderMembers(staffMembers)
             });
           }
           setDinasList(dinasData);
@@ -78,7 +90,7 @@ const MinbatPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-100 to-white">
+    <div className="min-h-screen bg-white">
       {/* Default shared Profile Hero */}
       <ProfileHero />
 
@@ -86,9 +98,9 @@ const MinbatPage = () => {
       <BidangTabs />
 
       {/* Page-specific header */}
-      <div className="bg-gradient-to-r from-red-900 to-red-800 text-white py-8">
+      <div className="py-8">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-2">Bidang Minbat</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-2">Bidang Minat & Bakat</h1>
           <p className="text-lg max-w-3xl mx-auto">
             Bidang yang bertanggung jawab dalam pengembangan minat dan bakat mahasiswa, serta mengorganisir berbagai kegiatan ekstrakurikuler dan kompetisi.
           </p>
@@ -102,7 +114,7 @@ const MinbatPage = () => {
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Koordinator Bidang</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
-                Pimpinan yang mengkoordinasikan seluruh kegiatan di bidang Minbat
+                Pimpinan yang mengkoordinasikan seluruh kegiatan di bidang Minat & Bakat
               </p>
             </div>
             <div className="flex flex-wrap justify-center gap-8">

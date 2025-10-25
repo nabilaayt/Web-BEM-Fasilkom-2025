@@ -5,6 +5,7 @@ import BidangTabs from '../../components/profile/BidangTabs';
 import DinasLogo from '../../components/profile/DinasLogo';
 import StaffCarousel from '../../components/profile/StaffCarousel';
 import dinasService from '../../services/dinasService';
+import { orderMembers } from '../../utils/memberOrdering';
 
 const SosialPolitikPage = () => {
   const [koorbidMembers, setKoorbidMembers] = useState([]);
@@ -52,8 +53,8 @@ const SosialPolitikPage = () => {
             
             dinasData.push({
               ...kategori,
-              bph: bphMembers,
-              staff: staffMembers
+              bph: orderMembers(bphMembers),
+              staff: orderMembers(staffMembers)
             });
           }
           setDinasList(dinasData);
@@ -80,7 +81,7 @@ const SosialPolitikPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-100 to-white">
+    <div className="min-h-screen bg-white">
       {/* Default shared Profile Hero */}
       <ProfileHero />
 
@@ -88,7 +89,7 @@ const SosialPolitikPage = () => {
       <BidangTabs />
 
       {/* Page-specific header */}
-      <div className="bg-gradient-to-r from-red-900 to-red-800 text-white py-8">
+      <div className="py-8">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-2">Bidang Sosial Politik</h1>
           <p className="text-lg max-w-3xl mx-auto">

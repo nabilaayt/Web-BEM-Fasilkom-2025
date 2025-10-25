@@ -5,6 +5,7 @@ import BidangTabs from '../../components/profile/BidangTabs';
 import DinasLogo from '../../components/profile/DinasLogo';
 import StaffCarousel from '../../components/profile/StaffCarousel';
 import dinasService from '../../services/dinasService';
+import { orderMembers } from '../../utils/memberOrdering';
 
 const RelasiPage = () => {
   const [koorbidMembers, setKoorbidMembers] = useState([]);
@@ -50,8 +51,8 @@ const RelasiPage = () => {
             
             dinasData.push({
               ...kategori,
-              bph: bphMembers,
-              staff: staffMembers
+              bph: orderMembers(bphMembers),
+              staff: orderMembers(staffMembers)
             });
           }
           setDinasList(dinasData);
@@ -78,7 +79,7 @@ const RelasiPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-100 to-white">
+    <div className="min-h-screen bg-white">
       {/* Default shared Profile Hero */}
       <ProfileHero />
 
