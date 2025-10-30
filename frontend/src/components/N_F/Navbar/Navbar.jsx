@@ -35,7 +35,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="navbar justify-between flex p-3 top-0 fixed w-full">
+    <nav className="navbar justify-between flex px-4 sm:px-8 lg:px-16 py-4 top-0 fixed w-full">
       {/* Logo */}
       <div>
         <Link
@@ -60,7 +60,7 @@ const Navbar = () => {
             to={item.path}
             className={({ isActive }) =>
               `my-6 gotham self-center items-center ease-in-out duration-300 cursor-pointer text-base font-normal mx-6 lg:inline hidden ${
-                isActive ? "text-blue-600 font-semibold" : "hover-text"
+                isActive ? "text-[#4A0000] font-semibold" : "hover-text"
               }`
             }
           >
@@ -81,32 +81,15 @@ const Navbar = () => {
               <a href="#" className="block px-4 py-2 hover:bg-gray-100 text-sm">
                 BEM OFFICIAL
               </a>
-              <a href="#" className="block px-4 py-2 hover:bg-gray-100 text-sm">
+              <a href="https://ilkomnews.bemilkomunsri.org/" className="block px-4 py-2 hover:bg-gray-100 text-sm" target="_blank" rel="noopener noreferrer">
                 ILKOM NEWS
               </a>
-              <a href="#" className="block px-4 py-2 hover:bg-gray-100 text-sm">
-                E-MAGAZINE
+              <a href="https://gaspol.bemilkomunsri.org/" className="block px-4 py-2 hover:bg-gray-100 text-sm" target="_blank" rel="noopener noreferrer">
+                GASPOL
               </a>
             </div>
           )}
         </div>
-
-        {/* Login / Logout button */}
-        {user ? (
-          <button
-            onClick={handleLogout}
-            className="my-6 ml-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 ease-in-out duration-300 text-sm font-medium lg:inline hidden"
-          >
-            Logout
-          </button>
-        ) : (
-          <button
-            onClick={handleLogin}
-            className="my-6 ml-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 ease-in-out duration-300 text-sm font-medium lg:inline hidden"
-          >
-            Admin
-          </button>
-        )}
       </div>
 
       {/* Hamburger Menu */}

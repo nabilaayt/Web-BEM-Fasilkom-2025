@@ -5,11 +5,12 @@ import admLogo from '../../../Assets/Logo/logo adm.png';
 import ppsdmLogo from '../../../Assets/Logo/logo ppsdm.png';
 import olahragaLogo from '../../../Assets/Logo/logo olahraga.png';
 import senbudLogo from '../../../Assets/Logo/logo senbud.png';
-import hubeksLogo from '../../../Assets/Logo/logo adm.png';
-import hunterLogo from '../../../Assets/Logo/logo ppsdm.png';
-import kastratLogo from '../../../Assets/Logo/logo adm.png';
-import adperLogo from '../../../Assets/Logo/logo ppsdm.png';
+import hubeksLogo from '../../../Assets/Logo/logo hubeks.png';
+import hunterLogo from '../../../Assets/Logo/logo hunter.png';
+import kastratLogo from '../../../Assets/Logo/logo kastrat.png';
+import adperLogo from '../../../Assets/Logo/logo adper.png';
 import sosmaslingLogo from '../../../Assets/Logo/logo sosmasling.png';
+import bismitLogo from '../../../Assets/Logo/logo bismit.png';
 
 const DinasLogo = ({ dinasName, className = "" }) => {
   // Function to get logo based on dinas name
@@ -43,7 +44,7 @@ const DinasLogo = ({ dinasName, className = "" }) => {
       return hubeksLogo;
     }
 
-    if (lowerName.includes('senbud')) {
+    if (lowerName.includes('senbud') || lowerName.includes('seni')) {
       return senbudLogo;
     }
 
@@ -59,10 +60,13 @@ const DinasLogo = ({ dinasName, className = "" }) => {
       return adperLogo;
     }
 
-    if (lowerName.includes('sosmasling')) {
+    if (lowerName.includes('sosmasling') || lowerName.includes('sosmas')) {
       return sosmaslingLogo;
     }
     
+    if (lowerName.includes('bismit')) {
+      return bismitLogo;
+    }
     return null;
   };
 

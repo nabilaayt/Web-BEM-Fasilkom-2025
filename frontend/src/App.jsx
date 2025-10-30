@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import { AuthProvider } from "./utils/authContext";
 import ProtectedRoute from "./utils/ProtectedRoute";
@@ -7,14 +7,7 @@ import Homepage from "./pages/homepage";
 import About from "./pages/aboutuspage";
 import Login from "./pages/Login";
 import DinasProfilePage from "./pages/DinasProfilePage";
-
-// Import bidang pages
-import IntiPage from "./pages/bidang/IntiPage";
-import MediaTeknologiPage from "./pages/bidang/MediaTeknologiPage";
-import KerumahtanggaanPage from "./pages/bidang/KerumahtanggaanPage";
-import SosialPolitikPage from "./pages/bidang/SosialPolitikPage";
-import RelasiPage from "./pages/bidang/RelasiPage";
-import MinbatPage from "./pages/bidang/MinbatPage";
+import ProfilePage from "./pages/ProfilePage";
 
 import Navbar from "./components/N_F/Navbar/Navbar";
 import Footer from "./components/N_F/Footer/Footer";
@@ -83,57 +76,27 @@ function App() {
             </PublicLayout>
           }
         />
+        {/* Profile Routes - NEW UNIFIED SYSTEM */}
         <Route
           path="/profile"
           element={
             <PublicLayout>
-              <IntiPage />
+              <ProfilePage />
             </PublicLayout>
           }
         />
+        <Route
+          path="/profile/:bidangSlug"
+          element={
+            <PublicLayout>
+              <ProfilePage />
+            </PublicLayout>
+          }
+        />
+
+        {/* Backward compatibility redirects for old bidang URLs */}
+        <Route path="/profile/inti" element={<Navigate to="/profile" replace />} />
         
-        {/* Bidang Routes */}
-        {/* /profile/inti removed — /profile is canonical and shows Inti by default */}
-        <Route
-          path="/profile/media-teknologi"
-          element={
-            <PublicLayout>
-              <MediaTeknologiPage />
-            </PublicLayout>
-          }
-        />
-        <Route
-          path="/profile/kerumahtanggaan"
-          element={
-            <PublicLayout>
-              <KerumahtanggaanPage />
-            </PublicLayout>
-          }
-        />
-        <Route
-          path="/profile/sosial-politik"
-          element={
-            <PublicLayout>
-              <SosialPolitikPage />
-            </PublicLayout>
-          }
-        />
-        <Route
-          path="/profile/relasi"
-          element={
-            <PublicLayout>
-              <RelasiPage />
-            </PublicLayout>
-          }
-        />
-        <Route
-          path="/profile/minbat"
-          element={
-            <PublicLayout>
-              <MinbatPage />
-            </PublicLayout>
-          }
-        />
         <Route
           path="/about"
           element={

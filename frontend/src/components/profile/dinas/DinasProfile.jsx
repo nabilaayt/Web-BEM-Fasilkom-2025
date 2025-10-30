@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import MemberSection from './MemberSection';
 import dinasService from '../../../services/dinasService';
 import { orderMembers } from '../../../utils/memberOrdering';
+import { getDinasDescription } from '../../../utils/dinasDescriptions';
 
 const DinasProfile = () => {
   const [bidangList, setBidangList] = useState([]);
@@ -64,8 +65,8 @@ const DinasProfile = () => {
       try {
         const members = await dinasService.getDinasMembers(selectedDinas);
         const all = members || [];  // backend returns jabatan enum values 'BPH' or 'Staff'
-  const bph = all.filter(m => (m.jabatan || '').toLowerCase() === 'bph');
-  const staff = all.filter(m => (m.jabatan || '').toLowerCase() === 'staff');
+        const bph = all.filter(m => (m.jabatan || '').toLowerCase() === 'bph');
+        const staff = all.filter(m => (m.jabatan || '').toLowerCase() === 'staff');
 
   // Reorder so that Kepala/Ketua appear first, Deputi/Wakil second
   const orderedBph = orderMembers(bph);
@@ -144,6 +145,9 @@ const DinasProfile = () => {
                 <div className="text-lg text-gray-600 mt-2">
                   {bidangList.find(b => b.id === selectedBidang)?.nama_bidang}
                 </div>
+                <p className="text-base text-gray-600 mt-4 max-w-3xl mx-auto">
+                  {getDinasDescription(kategoriList.find(k => k.id === selectedDinas)?.nama_dinas)}
+                </p>
               </>
             ) : (
               'Pilih Dinas'
