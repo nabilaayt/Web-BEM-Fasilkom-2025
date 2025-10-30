@@ -15,7 +15,7 @@
   color: #bb0001;
 }
 
-.navbar .text-gradient:hover{
+.navbar .text-gradient:hover {
   color: #636363;
 }
 
@@ -30,15 +30,21 @@
   border-bottom: 1px solid #ffffff;
 }
 
-.gotham{
+.gotham-medium {
+  font-family: "gotham", sans-serif;
+}
+.gotham-book {
   font-family: "gotham", sans-serif;
 }
 
-.cinzel{
+.cinzel {
   font-family: "Cinzel Decorative", sans-serif;
 }
 
-.cinzelbae{
+.cinzel-decorative-bold {
+  font-family: "Cinzel Decorative", sans-serif;
+}
+.cinzel-bold {
   font-family: "Cinzel", sans-serif;
 }
 

@@ -45,28 +45,52 @@ const Navbar = () => {
           <div className="flex">
             <img src={logo} className="w-12" alt="BEM Logo" />
             <div className="self-center ml-4">
-              <h1 className="text-xl cinzel">BEM KM FASILKOM UNSRI</h1>
-              <p className="cinzelbae">KABINET ARTHA DARMA</p>
+              <h1 className="text-xl cinzel-bold">BEM KM FASILKOM UNSRI</h1>
+              <span className="cinzel-decorative-bold">K</span>
+              <span className="cinzel-bold">ABINET</span>{" "}
+              <span className="cinzel-decorative-bold">A</span>
+              <span className="cinzel-bold">RTHA</span>{" "}
+              <span className="cinzel-bold">DARM</span>
+              <span className="cinzel-decorative-bold">A</span>
             </div>
           </div>
         </Link>
       </div>
 
       {/* Normal Navbar */}
-      <div className="navbar-nav flex">
-        {navItems.map((item) => (
-          <NavLink
-            key={item.path}
-            to={item.path}
-            className={({ isActive }) =>
-              `my-6 gotham self-center items-center ease-in-out duration-300 cursor-pointer text-base font-normal mx-6 lg:inline hidden ${
-                isActive ? "text-blue-600 font-semibold" : "hover-text"
-              }`
-            }
-          >
-            {item.name}
-          </NavLink>
-        ))}
+       <div className="navbar-nav flex">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `my-6 gotham self-center items-center ease-in-out duration-300 cursor-pointer text-base font-normal mx-6 lg:inline hidden ${
+              isActive ? "text-blue-600 font-semibold" : "hover-text"
+            }`
+          }
+        >
+          Home
+        </NavLink>
+
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            `my-6 gotham self-center items-center ease-in-out duration-300 cursor-pointer text-base font-normal mx-6 lg:inline hidden ${
+              isActive ? "text-blue-600 font-semibold" : "hover-text"
+            }`
+          }
+        >
+          About Us
+        </NavLink>
+
+        <NavLink
+          to="/profile"
+          className={({ isActive }) =>
+            `my-6 gotham self-center items-center ease-in-out duration-300 cursor-pointer text-base font-normal mx-6 lg:inline hidden ${
+              isActive ? "text-blue-600 font-semibold" : "hover-text"
+            }`
+          }
+        >
+          Profile
+        </NavLink>
 
         {/* Dropdown Desktop */}
         <div className="relative mx-6 my-6 gotham self-center lg:inline hidden">
