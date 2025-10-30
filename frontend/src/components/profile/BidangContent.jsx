@@ -214,7 +214,7 @@ const BidangContent = ({ bidangSlug }) => {
           <>
             {/* Koordinator Bidang Section */}
             {koorbidMembers.length > 0 && (
-              <div className="mb-16">
+              <div className="mb-40">
                 <div className="text-center mb-12">
                   <h2 className="text-3xl font-bold text-gray-900 mb-4">Koordinator Bidang</h2>
                   <p className="text-gray-600 max-w-2xl mx-auto">
@@ -237,7 +237,7 @@ const BidangContent = ({ bidangSlug }) => {
 
             {/* Dinas Sections */}
             {dinasList.map((dinas) => (
-              <div key={dinas.id} className="mb-16">
+              <div key={dinas.id} className="mb-40">
                 {/* Dinas Header */}
                 <div className="text-center mb-12">
                   <DinasLogo dinasName={dinas.nama_dinas} />

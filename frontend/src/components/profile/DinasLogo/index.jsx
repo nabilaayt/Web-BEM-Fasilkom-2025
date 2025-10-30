@@ -78,11 +78,11 @@ const DinasLogo = ({ dinasName, className = "" }) => {
 
   return (
     <div className={`flex justify-center mb-4 ${className}`}>
-      <div className="w-32 h-32 rounded-full bg-gray-100 flex items-center justify-center shadow-md">
+      <div className="w-50 h-50 rounded-full bg-gray-100 flex items-center justify-center shadow-md">
         <img 
           src={logo} 
           alt={`Logo ${dinasName}`}
-          className="w-30 h-30 object-contain"
+          className="w-40 h-40 object-contain"
           onError={(e) => {
             // Hide the logo container if image fails to load
             e.target.parentElement.parentElement.style.display = 'none';
