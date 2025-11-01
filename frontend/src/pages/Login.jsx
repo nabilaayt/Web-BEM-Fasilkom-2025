@@ -24,15 +24,15 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-red-600 via-red-700 to-gray-800 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full">
         {/* Logo */}
         <div className="text-center mb-8">
           <div className="inline-block w-20 h-20 bg-white rounded-2xl flex items-center justify-center shadow-2xl mb-4">
-            <span className="text-3xl font-bold text-blue-600">BEM</span>
+            <span className="text-3xl font-bold text-red-600">BEM</span>
           </div>
           <h2 className="text-4xl font-bold text-white mb-2">Admin Login</h2>
-          <p className="text-blue-100">BEM Fasilkom UNSRI - Artha Darma</p>
+          <p className="text-red-100">BEM Fasilkom UNSRI - Artha Darma</p>
         </div>
 
         {/* Login Form */}
@@ -51,7 +51,7 @@ const Login = () => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                  className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-transparent"
                   placeholder="admin@example.com"
                   required
                 />
@@ -71,7 +71,7 @@ const Login = () => {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                  className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-transparent"
                   placeholder="••••••••"
                   required
                 />
@@ -82,7 +82,7 @@ const Login = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full flex justify-center items-center gap-2 py-3 px-4 border border-transparent rounded-lg shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full flex justify-center items-center gap-2 py-3 px-4 border border-transparent rounded-lg shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? (
                 <>
@@ -103,7 +103,7 @@ const Login = () => {
         <div className="text-center mt-6">
           <a
             href="/"
-            className="text-white hover:text-blue-200 transition-colors"
+            className="text-white hover:text-red-200 transition-colors"
           >
             ← Kembali ke Beranda
           </a>

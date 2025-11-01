@@ -3,8 +3,8 @@ import { Toaster } from "react-hot-toast";
 import { AuthProvider } from "./utils/authContext";
 import ProtectedRoute from "./utils/ProtectedRoute";
 
-import Homepage from "./pages/homepage";
-import About from "./pages/aboutuspage";
+import Homepage from "./pages/Homepage";
+import About from "./pages/AboutUspage";
 import Login from "./pages/Login";
 
 import Navbar from "./components/N_F/Navbar/Navbar";

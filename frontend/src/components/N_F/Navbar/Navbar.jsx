@@ -63,7 +63,7 @@ const Navbar = () => {
           to="/"
           className={({ isActive }) =>
             `my-6 gotham self-center items-center ease-in-out duration-300 cursor-pointer text-base font-normal mx-6 lg:inline hidden ${
-              isActive ? "text-blue-600 font-semibold" : "hover-text"
+              isActive ? "text-red-600 font-semibold" : "hover-text"
             }`
           }
         >
@@ -74,7 +74,7 @@ const Navbar = () => {
           to="/about"
           className={({ isActive }) =>
             `my-6 gotham self-center items-center ease-in-out duration-300 cursor-pointer text-base font-normal mx-6 lg:inline hidden ${
-              isActive ? "text-blue-600 font-semibold" : "hover-text"
+              isActive ? "text-red-600 font-semibold" : "hover-text"
             }`
           }
         >
@@ -85,7 +85,7 @@ const Navbar = () => {
           to="/profile"
           className={({ isActive }) =>
             `my-6 gotham self-center items-center ease-in-out duration-300 cursor-pointer text-base font-normal mx-6 lg:inline hidden ${
-              isActive ? "text-blue-600 font-semibold" : "hover-text"
+              isActive ? "text-red-600 font-semibold" : "hover-text"
             }`
           }
         >
@@ -126,7 +126,7 @@ const Navbar = () => {
         ) : (
           <button
             onClick={handleLogin}
-            className="my-6 ml-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 ease-in-out duration-300 text-sm font-medium lg:inline hidden"
+            className="my-6 ml-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 ease-in-out duration-300 text-sm font-medium lg:inline hidden"
           >
             Admin
           </button>
@@ -182,13 +182,13 @@ const Navbar = () => {
             </button>
             {isDropdownMobileOpen && (
               <div className="ml-16 mb-2 items-center self-center text-sm space-y-2">
-                <a href="#" className="block hover:text-blue-500">
+                <a href="#" className="block hover:text-red-500">
                   BEM OFFICIAL
                 </a>
-                <a href="#" className="block hover:text-blue-500">
+                <a href="#" className="block hover:text-red-500">
                   ILKOM NEWS
                 </a>
-                <a href="#" className="block hover:text-blue-500">
+                <a href="#" className="block hover:text-red-500">
                   E-MAGAZINE
                 </a>
               </div>
@@ -212,7 +212,7 @@ const Navbar = () => {
                 handleLogin();
                 toggleNav();
               }}
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all"
+              className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-all"
             >
               Admin
             </button>

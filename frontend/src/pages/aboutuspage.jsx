@@ -1,7 +1,12 @@
-export default function About() {
+import React from "react";
+
+const AboutUspage = () => {
   return (
-    <>
-      <h1 className="text-2xl font-bold text-black justify-center items-center">Ini About us</h1>
-    </>
-  )
-}
+    <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:p-0 p-0">
+      <div className="w-full">
+      </div>
+    </main>
+  );
+};
+
+export default AboutUspage;
