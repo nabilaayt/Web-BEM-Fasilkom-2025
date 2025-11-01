@@ -31,14 +31,10 @@
 }
 
 .gotham-medium {
-  font-family: "gotham", sans-serif;
+  font-family: "Gotham-Medium", sans-serif;
 }
 .gotham-book {
-  font-family: "gotham", sans-serif;
-}
-
-.cinzel {
-  font-family: "Cinzel Decorative", sans-serif;
+  font-family: "Gotham-Book", sans-serif;
 }
 
 .cinzel-decorative-bold {

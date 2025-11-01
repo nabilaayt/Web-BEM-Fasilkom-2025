@@ -10,12 +10,13 @@ const Footer = () => {
           <div className={styles.footerLogo}>
             <img src={logo} alt="Logo" className={styles.footerLogoImage} />
             <div className={styles.footerLogoText}>
+              <h1>BEM KM FASILKOM UNSRI</h1>
+              <span className={styles.decorativeBold}>K</span>
+              <span className={styles.regular}>ABINET</span>{" "}
               <span className={styles.decorativeBold}>A</span>
               <span className={styles.regular}>RTHA</span>{" "}
               <span className={styles.regular}>DARM</span>
               <span className={styles.decorativeBold}>A</span>
-              <br />
-              BEM KM FASILKOM UNSRI
             </div>
           </div>
 
@@ -30,14 +31,35 @@ const Footer = () => {
         <div className={styles.footerContact}>
           <h3>Contact Us</h3>
           <div className="flex-col flex">
-            <a href="https://www.linkedin.com/company/bemkmfasilkomunsri/posts/?feedView=all">Linkedin: @bemkmilkomunsri</a>
+            <a href="https://www.linkedin.com/company/bemkmfasilkomunsri/posts/?feedView=all">
+              Linkedin: @bemkmilkomunsri
+            </a>
             <a href="">Email: bemfasilkomunsri@gmail.com</a>
             <a href="https://www.instagram.com/bemilkomunsri">
               Instagram: @bemilkomunsri
             </a>
             <a href="https://x.com/bemilkomunsri">X: @bemilkomunsri</a>
-            <a href="https://www.facebook.com/bemilkomunsri?_rdc=2&_rdr#">Facebook: bemilkomunsri</a>
+            <a href="https://www.facebook.com/bemilkomunsri?_rdc=2&_rdr#">
+              Facebook: bemilkomunsri
+            </a>
           </div>
+        </div>
+        <div className={styles.footerNav}>
+          <h3>Navigation</h3>
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/about">About Us</a>
+            </li>
+            <li>
+              <a href="/profile">Profile</a>
+            </li>
+            <li>
+              <a href="#">BEM Apps</a>
+            </li>
+          </ul>
         </div>
       </div>
       <div className={styles.footerBottom}>

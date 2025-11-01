@@ -21,9 +21,8 @@ const Hero = () => {
 
       <p className="max-w-2xl text-sm md:text-base text-gray-700 leading-relaxed mb-8">
         Sebagai wadah aspirasi mahasiswa, BEM KM Fasilkom UNSRI hadir untuk
-        menjembatani suara mahasiswa dengan civitas akademika, serta
-        menciptakan ruang pengembangan diri di bidang akademik,
-        kepemimpinan, dan sosial.
+        menjembatani suara mahasiswa dengan civitas akademika, serta menciptakan
+        ruang pengembangan diri di bidang akademik, kepemimpinan, dan sosial.
       </p>
 
       {/* ===== TOMBOL ===== */}
@@ -41,21 +40,21 @@ const Hero = () => {
       <img
         src={Inisiatif}
         alt="Inisiatif"
-        className="absolute left-10 top-1/3 w-28 md:w-36 animate-float-slow"
+        className="absolute left-10 top-1/4 w-28 md:w-36 animate-float-slow"
       />
 
       {/* Kolaborasi */}
       <img
         src={Kolaborasi}
         alt="Kolaborasi"
-        className="absolute right-10 top-10 w-28 md:w-36 animate-float-slow"
+        className="absolute right-10 top-7 sm:top-20 md:top-24 w-28 md:w-36 animate-float-slow"
       />
 
       {/* Advokasi */}
       <img
         src={Advokasi}
         alt="Advokasi"
-        className="absolute right-47 bottom-10 w-28 md:w-36 animate-float-slow"
+        className="absolute right-15 md:right-47 bottom-20 w-28 md:w-36 animate-float-slow"
       />
     </section>
   );
