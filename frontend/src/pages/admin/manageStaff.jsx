@@ -1,16 +1,16 @@
-import { useState, useEffect } from 'react';
-import { FaPlus, FaSearch, FaEdit, FaTrash, FaUser } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import Sidebar from './sidebar';
-import dinasService from '../../services/dinasService';
-import toast from 'react-hot-toast';
+import { useState, useEffect } from "react";
+import { FaPlus, FaSearch, FaEdit, FaTrash, FaUser } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import Sidebar from "./sidebar";
+import dinasService from "../../services/dinasService";
+import toast from "react-hot-toast";
 
 const ManageStaff = () => {
   const [pengurus, setPengurus] = useState([]);
   const [filteredPengurus, setFilteredPengurus] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [filterJabatan, setFilterJabatan] = useState('all');
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filterJabatan, setFilterJabatan] = useState("all");
 
   useEffect(() => {
     fetchPengurus();
@@ -26,7 +26,7 @@ const ManageStaff = () => {
       setPengurus(data);
       setFilteredPengurus(data);
     } catch (error) {
-      toast.error('Gagal memuat data pengurus');
+      toast.error("Gagal memuat data pengurus");
     } finally {
       setLoading(false);
     }
@@ -45,7 +45,7 @@ const ManageStaff = () => {
     }
 
     // Filter by jabatan
-    if (filterJabatan !== 'all') {
+    if (filterJabatan !== "all") {
       filtered = filtered.filter((p) => p.jabatan === filterJabatan);
     }
 
@@ -56,30 +56,32 @@ const ManageStaff = () => {
     if (window.confirm(`Apakah Anda yakin ingin menghapus ${nama}?`)) {
       try {
         await dinasService.deletePengurus(id);
-        toast.success('Pengurus berhasil dihapus');
+        toast.success("Pengurus berhasil dihapus");
         fetchPengurus();
       } catch (error) {
-        toast.error('Gagal menghapus pengurus');
+        toast.error("Gagal menghapus pengurus");
       }
     }
   };
 
-  const jabatanOptions = ['all', 'BPH', 'BPI', 'KoorBid', 'Staff'];
+  const jabatanOptions = ["all", "BPH", "BPI", "KoorBid", "Staff"];
 
   return (
     <div className="flex min-h-screen bg-gray-100">
       <Sidebar />
-      
+
       <div className="flex-1 p-8">
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Kelola Pengurus</h1>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">
+              Kelola Pengurus
+            </h1>
             <p className="text-gray-600">Manage data pengurus BEM Fasilkom</p>
           </div>
           <Link
             to="/admin/addStaff"
-            className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 shadow-lg"
+            className="flex items-center gap-2 px-6 py-3 bg-[#4a0000] text-white rounded-lg hover:bg-[#4a0000]/90 transition-all duration-300 shadow-lg"
           >
             <FaPlus className="w-5 h-5" />
             <span>Tambah Pengurus</span>
@@ -97,7 +99,7 @@ const ManageStaff = () => {
                 placeholder="Cari nama atau divisi..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4a0000] focus:border-transparent"
               />
             </div>
 
@@ -105,7 +107,7 @@ const ManageStaff = () => {
             <select
               value={filterJabatan}
               onChange={(e) => setFilterJabatan(e.target.value)}
-              className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+              className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4a0000] focus:border-transparent"
             >
               <option value="all">Semua Jabatan</option>
               {jabatanOptions.slice(1).map((jabatan) => (
@@ -121,7 +123,7 @@ const ManageStaff = () => {
         <div className="bg-white rounded-xl shadow-lg overflow-hidden">
           {loading ? (
             <div className="flex items-center justify-center py-20">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#4a0000]"></div>
             </div>
           ) : filteredPengurus.length === 0 ? (
             <div className="text-center py-20">
@@ -160,7 +162,9 @@ const ManageStaff = () => {
                         <div className="w-12 h-12 rounded-lg overflow-hidden bg-gray-200">
                           {person.foto ? (
                             <img
-                              src={`${import.meta.env.VITE_API_URL}/images/${person.foto}`}
+                              src={`${import.meta.env.VITE_API_URL}/images/${
+                                person.foto
+                              }`}
                               alt={person.nama}
                               className="w-full h-full object-cover"
                             />
@@ -172,37 +176,43 @@ const ManageStaff = () => {
                         </div>
                       </td>
                       <td className="px-6 py-4">
-                        <div className="font-medium text-gray-900">{person.nama}</div>
+                        <div className="font-medium text-gray-900">
+                          {person.nama}
+                        </div>
                       </td>
                       <td className="px-6 py-4">
                         <span
                           className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${
-                            person.jabatan === 'BPH'
-                              ? 'bg-purple-100 text-purple-700'
-                              : person.jabatan === 'BPI'
-                              ? 'bg-green-100 text-green-700'
-                              : person.jabatan === 'KoorBid'
-                              ? 'bg-blue-100 text-blue-700'
-                              : 'bg-gray-100 text-gray-700'
+                            person.jabatan === "BPH"
+                              ? "bg-purple-100 text-purple-700"
+                              : person.jabatan === "BPI"
+                              ? "bg-green-100 text-green-700"
+                              : person.jabatan === "KoorBid"
+                              ? "bg-amber-800 text-[#4a0000]/90"
+                              : "bg-gray-100 text-gray-700"
                           }`}
                         >
                           {person.jabatan}
                         </span>
                       </td>
-                      <td className="px-6 py-4 text-gray-700">{person.divisi}</td>
                       <td className="px-6 py-4 text-gray-700">
-                        {person.kategori_dinas?.nama_dinas || '-'}
+                        {person.divisi}
+                      </td>
+                      <td className="px-6 py-4 text-gray-700">
+                        {person.kategori_dinas?.nama_dinas || "-"}
                       </td>
                       <td className="px-6 py-4">
                         <div className="flex items-center justify-center gap-2">
                           <Link
                             to={`/admin/edit-dinas/${person.uuid}`}
-                            className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                            className="p-2 text-[#4a0000] hover:bg-[#4a0000]/90 rounded-lg transition-colors"
                           >
                             <FaEdit className="w-5 h-5" />
                           </Link>
                           <button
-                            onClick={() => handleDelete(person.uuid, person.nama)}
+                            onClick={() =>
+                              handleDelete(person.uuid, person.nama)
+                            }
                             className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
                           >
                             <FaTrash className="w-5 h-5" />
@@ -220,7 +230,8 @@ const ManageStaff = () => {
         {/* Results Count */}
         {!loading && filteredPengurus.length > 0 && (
           <div className="mt-4 text-gray-600 text-sm">
-            Menampilkan {filteredPengurus.length} dari {pengurus.length} pengurus
+            Menampilkan {filteredPengurus.length} dari {pengurus.length}{" "}
+            pengurus
           </div>
         )}
       </div>

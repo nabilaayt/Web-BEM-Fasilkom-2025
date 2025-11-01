@@ -145,7 +145,7 @@ const Navbar = () => {
         {user ? (
           <button
             onClick={handleLogout}
-            className="ml-4 bg-white text-[#4a0000] px-4 py-2 rounded-lg border-2 border-[#4a0000] hover:bg-[#4a0000] hover:text-white hover:border-white ease-in-out duration-300 text-sm font-medium lg:inline hidden"
+            className="my-4 ml-4 bg-white text-[#4a0000] px-4 py-2 rounded-lg border-2 border-[#4a0000] hover:bg-[#4a0000] hover:text-white hover:border-white ease-in-out duration-300 text-sm font-medium lg:inline hidden"
           >
             Logout
           </button>
