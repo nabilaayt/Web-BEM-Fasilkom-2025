@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* url font atau customize color bisa ditambahkan disini */
-@import "tailwindcss";
-
 @font-face {
   font-family: "Cinzel Decorative";
   src: url("/font/Cinzel,Cinzel_Decorative,Patrick_Hand_SC,Poppins/Cinzel_Decorative/CinzelDecorative-Bold.ttf")

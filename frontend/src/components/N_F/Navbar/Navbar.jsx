@@ -34,7 +34,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="navbar justify-between flex p-3 top-0 fixed w-full">
+  <nav className="navbar justify-between flex px-4 sm:px-8 lg:px-16 py-2 sm:py-3 lg:py-4 top-0 fixed w-full z-50">
       {/* Logo */}
       <div>
         <Link
@@ -75,20 +75,45 @@ const Navbar = () => {
       </div>
 
       {/* Normal Navbar */}
-      <div className="navbar-nav flex">
-        {navItems.map((item) => (
-          <NavLink
-            key={item.path}
-            to={item.path}
-            className={({ isActive }) =>
-              `my-6 gotham self-center items-center ease-in-out duration-300 cursor-pointer text-base font-normal mx-6 lg:inline hidden ${
-                isActive ? "text-blue-600 font-semibold" : "hover-text"
-              }`
-            }
-          >
-            {item.name}
-          </NavLink>
-        ))}
+      <div className="navbar-nav flex text-[#4a0000]">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `self-center items-center ease-in-out duration-300 text-base mx-6 lg:inline hidden ${
+              isActive
+                ? "text-[#4a0000] font-gotham-medium font-semibold"
+                : "text-[#636363] font-gotham-book font-normal hover:text-[#4a0000]"
+            }`
+          }
+        >
+          Home
+        </NavLink>
+
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            `self-center items-center ease-in-out duration-300 text-base mx-6 lg:inline hidden ${
+              isActive
+                ? "text-[#4a0000] font-gotham-medium font-semibold"
+                : "text-[#636363] font-gotham-book font-normal hover:text-[#4a0000]"
+            }`
+          }
+        >
+          About Us
+        </NavLink>
+
+        <NavLink
+          to="/profile"
+          className={({ isActive }) =>
+            `self-center items-center ease-in-out duration-300 text-base mx-6 lg:inline hidden ${
+              isActive
+                ? "text-[#4a0000] font-gotham-medium font-semibold"
+                : "text-[#636363] font-gotham-book font-normal hover:text-[#4a0000]"
+            }`
+          }
+        >
+          Profile
+        </NavLink>
 
         {/* Dropdown Desktop */}
         <div className="relative mx-6 self-center lg:inline hidden">
@@ -106,32 +131,15 @@ const Navbar = () => {
               >
                 GASPOL
               </a>
-              <a href="#" className="block px-4 py-2 hover:bg-gray-100 text-sm">
+              <a
+                href="https://ilkomnews.bemilkomunsri.org/"
+                className="block px-4 py-2 hover:bg-gray-100 text-sm"
+              >
                 ILKOM NEWS
-              </a>
-              <a href="#" className="block px-4 py-2 hover:bg-gray-100 text-sm">
-                E-MAGAZINE
               </a>
             </div>
           )}
         </div>
-
-        {/* Login / Logout button */}
-        {user ? (
-          <button
-            onClick={handleLogout}
-            className="my-6 ml-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 ease-in-out duration-300 text-sm font-medium lg:inline hidden"
-          >
-            Logout
-          </button>
-        ) : (
-          <button
-            onClick={handleLogin}
-            className="my-6 ml-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 ease-in-out duration-300 text-sm font-medium lg:inline hidden"
-          >
-            Admin
-          </button>
-        )}
       </div>
 
       {/* Hamburger Menu */}
@@ -205,31 +213,6 @@ const Navbar = () => {
                 </div>
               )}
             </div>
-
-            {/* Login / Logout in Sidebar */}
-            <div className="pt-6 border-t border-gray-200">
-              {user ? (
-                <button
-                  onClick={() => {
-                    handleLogout();
-                    toggleNav();
-                  }}
-                  className="w-full bg-white text-[#4a0000] px-4 py-2 rounded-lg border-2 border-[#4a0000] hover:bg-[#4a0000] hover:text-white hover:border-white ease-in-out duration-300 text-sm font-medium"
-                >
-                  Logout
-                </button>
-              ) : (
-                <button
-                  onClick={() => {
-                    handleLogin();
-                    toggleNav();
-                  }}
-                  className="w-full bg-[#4a0000] text-white px-4 py-2 rounded-lg border-2 border-transparent hover:bg-white hover:text-[#4a0000] hover:border-[#4a0000] ease-in-out duration-300 text-sm font-medium"
-                >
-                  Admin
-                </button>
-              )}
-            </div>
           </div>
         </div>
       </div>
@@ -237,4 +220,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar;  
