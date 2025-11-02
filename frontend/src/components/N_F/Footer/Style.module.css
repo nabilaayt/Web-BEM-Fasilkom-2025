@@ -1,21 +1,3 @@
-/* navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 24px;
-  background-color: #fff;
-  max-width: 1700px;
-  margin: 0 auto;
-}
-
-.navbarLogo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-left: 40px;
-}
-
 .regular {
   font-family: "Cinzel", cursive;
 }
@@ -30,25 +12,6 @@
   object-fit: contain;
 }
 
-.navbarText {
-  font-family: "Cinzel", cursive;
-  font-size: 1.5rem;
-  font-weight: bold;
-  background: linear-gradient(135deg, #810001 4%, #c50202 45%, #bb0001 97%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-
-.navbarMenu {
-  list-style: none;
-  display: flex;
-  gap: 16px;
-  margin: 0;
-  padding: 0;
-}
-
 /* Footer */
 .footer {
   background-color: #4a0000;
@@ -57,7 +20,6 @@
   text-align: center;
   font-family: "Gotham Book", cursive;
   font-size: 1rem;
-  margin-top: 40px;
 }
 
 .footerLogo {
@@ -132,7 +94,7 @@
   font-size: 1rem;
 }
 
-.footerContact a,
+.footerContact p,
 .footerInfo p {
   margin-bottom: 8px;
   font-size: 0.875rem;

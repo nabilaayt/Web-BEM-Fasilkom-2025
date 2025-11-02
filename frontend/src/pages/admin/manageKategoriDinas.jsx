@@ -29,7 +29,8 @@ const ManageKategoriDinas = () => {
       ]);
       setKategoriDinas(kategoriData);
       setBidang(bidangData);
-    } catch (error) {
+    } catch (err) {
+      console.error(err);
       toast.error("Gagal memuat data");
     } finally {
       setLoading(false);
@@ -50,9 +51,10 @@ const ManageKategoriDinas = () => {
 
       resetForm();
       fetchData();
-    } catch (error) {
+    } catch (err) {
+      console.error(err);
       const message =
-        error.response?.data?.msg || "Gagal menyimpan kategori dinas";
+        err.response?.data?.msg || "Gagal menyimpan kategori dinas";
       toast.error(message);
     }
   };
@@ -78,7 +80,8 @@ const ManageKategoriDinas = () => {
         await dinasService.deleteKategoriDinas(id);
         toast.success("Kategori Dinas berhasil dihapus");
         fetchData();
-      } catch (error) {
+      } catch (err) {
+        console.error(err);
         toast.error("Gagal menghapus kategori dinas");
       }
     }

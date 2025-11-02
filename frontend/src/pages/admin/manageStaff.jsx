@@ -17,22 +17,7 @@ const ManageStaff = () => {
   }, []);
 
   useEffect(() => {
-    filterData();
-  }, [searchTerm, filterJabatan, pengurus]);
-
-  const fetchPengurus = async () => {
-    try {
-      const data = await dinasService.getAllPengurus();
-      setPengurus(data);
-      setFilteredPengurus(data);
-    } catch (error) {
-      toast.error("Gagal memuat data pengurus");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const filterData = () => {
+    // Apply filters directly here to keep dependencies explicit
     let filtered = [...pengurus];
 
     // Filter by search term
@@ -50,7 +35,22 @@ const ManageStaff = () => {
     }
 
     setFilteredPengurus(filtered);
+  }, [searchTerm, filterJabatan, pengurus]);
+
+  const fetchPengurus = async () => {
+    try {
+      const data = await dinasService.getAllPengurus();
+      setPengurus(data);
+      setFilteredPengurus(data);
+    } catch (err) {
+      console.error(err);
+      toast.error("Gagal memuat data pengurus");
+    } finally {
+      setLoading(false);
+    }
   };
+
+  // filtering logic handled in useEffect above
 
   const handleDelete = async (id, nama) => {
     if (window.confirm(`Apakah Anda yakin ingin menghapus ${nama}?`)) {
@@ -58,7 +58,8 @@ const ManageStaff = () => {
         await dinasService.deletePengurus(id);
         toast.success("Pengurus berhasil dihapus");
         fetchPengurus();
-      } catch (error) {
+      } catch (err) {
+        console.error(err);
         toast.error("Gagal menghapus pengurus");
       }
     }

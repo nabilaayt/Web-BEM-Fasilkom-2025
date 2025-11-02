@@ -21,9 +21,14 @@ const store = new sessionStore({
 });
 
 // Sync database
-// (async () => {
-//   await db.sync();
-// })();
+(async () => {
+  try {
+    await db.sync();
+    console.log('Database synced successfully');
+  } catch (error) {
+    console.error('Error syncing database:', error);
+  }
+})();
 
 app.use(
   session({
