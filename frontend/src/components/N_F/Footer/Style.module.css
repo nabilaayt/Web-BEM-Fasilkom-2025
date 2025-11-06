@@ -137,3 +137,9 @@
   font-size: 1rem;
   color: #fff;
 }
+
+/* clean divider line above copyright */
+.footerBottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  padding-top: 16px;
+}
