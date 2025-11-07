@@ -1,7 +1,7 @@
 import React from "react";
-import PhotoHome from "./images/Photo Home.png";
-import Kekeluargaan from "./images/Kekeluargaan.png";
-import Kebersamaan from "./images/Kebersamaan.png";
+import PhotoHome from "../images/Photo Home.png";
+import Kekeluargaan from "../images/Kekeluargaan.png";
+import Kebersamaan from "../images/Kebersamaan.png";
 
 const AboutUsHero = () => {
 	return (
