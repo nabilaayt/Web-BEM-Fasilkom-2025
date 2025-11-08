@@ -172,19 +172,19 @@ const BidangContent = ({ bidangSlug }) => {
       {/* Page-specific header */}
       <div className="py-8">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-2">{config.title}</h1>
-          <p className="text-lg max-w-3xl mx-auto">{config.description}</p>
+          <h1 className="text-3xl md:text-3xl font-gotham-bold mb-6">{config.title}</h1>
+          <p className="font-gotham-book text-gray-600 text-lg max-w-3xl mx-auto">{config.description}</p>
         </div>
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-16 text-base md:text-lg ">
         {/* Inti Bidang - Single Member List */}
         {bidangSlug === 'inti' && (
           <>
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Struktur Kepengurusan</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
+              <h2 className="text-3xl font-gotham-bold mb-4">Struktur Kepengurusan</h2>
+              <p className="text-gray-600 font-gotham-book max-w-2xl mx-auto">
                 Tim inti yang memimpin dan mengkoordinasikan seluruh kegiatan BEM KM Fasilkom UNSRI
               </p>
             </div>
@@ -203,7 +203,7 @@ const BidangContent = ({ bidangSlug }) => {
 
             {koorbidMembers.length === 0 && (
               <div className="text-center py-12">
-                <p className="text-gray-500 text-lg">Belum ada data anggota untuk bidang Inti</p>
+                <p className="text-gray-500 ">Belum ada data anggota untuk bidang Inti</p>
               </div>
             )}
           </>
@@ -216,8 +216,8 @@ const BidangContent = ({ bidangSlug }) => {
             {koorbidMembers.length > 0 && (
               <div className="mb-40">
                 <div className="text-center mb-12">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-4">Koordinator Bidang</h2>
-                  <p className="text-gray-600 max-w-2xl mx-auto">
+                  <h2 className="text-3xl font-gotham-bold mb-4">Koordinator Bidang</h2>
+                  <p className="text-gray-600 font-gotham-book max-w-2xl mx-auto">
                     Pimpinan yang mengkoordinasikan seluruh kegiatan di {config.title}
                   </p>
                 </div>
@@ -242,8 +242,8 @@ const BidangContent = ({ bidangSlug }) => {
                 <div className="text-center mb-12">
                   <DinasLogo dinasName={dinas.nama_dinas} />
                   
-                  <h2 className="text-3xl font-bold text-gray-900 mb-4">Dinas {dinas.nama_dinas}</h2>
-                  <p className="text-gray-600 max-w-2xl mx-auto">
+                  <h2 className="text-3xl font-gotham-bold text-gray-900 mb-4">Dinas {dinas.nama_dinas}</h2>
+                  <p className="text-gray-600 font-gotham-book max-w-2xl mx-auto">
                     {getDinasDescription(dinas.nama_dinas)}
                   </p>
                 </div>
@@ -251,7 +251,7 @@ const BidangContent = ({ bidangSlug }) => {
                 {/* BPH Section */}
                 {dinas.bph.length > 0 && (
                   <div className="mb-12">
-                    <h3 className="text-2xl font-semibold text-center mb-8 text-gray-800">
+                    <h3 className="text-2xl font-gotham-bold text-center mb-8">
                       Badan Pengurus Harian (BPH)
                     </h3>
                     <div className="flex flex-wrap justify-center gap-6">
@@ -271,7 +271,7 @@ const BidangContent = ({ bidangSlug }) => {
                 {/* Staff Section */}
                 {dinas.staff.length > 0 && (
                   <div>
-                    <h3 className="text-2xl font-semibold text-center mb-8 text-gray-800">
+                    <h3 className="text-2xl font-gotham-bold text-center mb-8 text-gray-800">
                       Staff
                     </h3>
                     <StaffCarousel staff={dinas.staff} dinasName={dinas.nama_dinas} />
@@ -282,7 +282,7 @@ const BidangContent = ({ bidangSlug }) => {
 
             {koorbidMembers.length === 0 && dinasList.length === 0 && (
               <div className="text-center py-12">
-                <p className="text-gray-500 text-lg">Belum ada data untuk {config.title}</p>
+                <p className="text-gray-500">Belum ada data untuk {config.title}</p>
               </div>
             )}
           </>

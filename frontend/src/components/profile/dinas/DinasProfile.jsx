@@ -137,8 +137,8 @@ const DinasProfile = () => {
         )}
 
         {/* Selected dinas header */}
-        <div className="mb-10">
-          <h2 className="text-2xl font-semibold">
+        <div className="mb-10 text-base md:text-lg font-gotham-book">
+          <h2 className="text-2xl font-gotham-bold">
             {selectedDinas ? (
               <>
                 Dinas {kategoriList.find(k => k.id === selectedDinas)?.nama_dinas}
