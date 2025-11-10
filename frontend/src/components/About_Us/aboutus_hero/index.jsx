@@ -6,7 +6,7 @@ import Kebersamaan from "../images/Kebersamaan.svg";
 const AboutUsHero = () => {
   return (
     <section
-      className="relative w-full h-[95vh] flex items-center justify-center text-center overflow-hidden"
+      className="relative w-full h-[100vh] flex items-center justify-center text-center overflow-hidden"
       id="aboutus-hero"
     >
       {/* render background image as an actual <img> so the browser loads the asset URL directly */}
