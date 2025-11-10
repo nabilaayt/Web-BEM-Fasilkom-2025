@@ -1,7 +1,7 @@
 import React from "react";
-import PhotoHome from "./images/Photo_Home.svg";
-import Kekeluargaan from "./images/Kekeluargaan.svg";
-import Kebersamaan from "./images/Kebersamaan.svg";
+import PhotoHome from "../images/Photo_Home.svg";
+import Kekeluargaan from "../images/Kekeluargaan.svg";
+import Kebersamaan from "../images/Kebersamaan.svg";
 
 const AboutUsHero = () => {
   return (
@@ -46,7 +46,7 @@ const AboutUsHero = () => {
           BEM FASILKOM UNSRI
         </h1>
 
-        <p className="mt-6 font-gotham-medium text-sm sm:text-base md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+        <p className="mt-6 font-gotham-medium sm:text-base md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
           Menyelami perjalanan, visi, dan dedikasi organisasi kemahasiswaan yang
           menggerakkan inovasi dan kepemimpinan di Fakultas Ilmu Komputer
         </p>

@@ -57,10 +57,10 @@ const AboutBem = () => {
 					<div className="flex flex-col md:flex-row items-start gap-28 ">
 					{/* Left - About text */}
 						<div ref={leftColRef} className="md:w-5/12">
-						<h3 className="text-[32px] md:text-[30px] font-semibold text-[#4a0000] mb-4">
+						<h3 className="text-2xl md:text-3xl font-semibold text-[#4a0000] mb-4 font-gotham-bold">
 							<span className="text-black">About</span> BEM KM Fasilkom UNSRI
 						</h3>
-						<p className="text-[18px] md:text-[16.3px] text-gray-700 leading-relaxed text-justify">
+						<p className="text-sm md:text-base text-gray-700 leading-relaxed text-justify font-gotham-book">
 							BEM KM Fasilkom Unsri adalah organisasi eksekutif mahasiswa yang
 							mewadahi aspirasi, inovasi, dan aksi nyata. Dengan semangat Artha
 							Dharma, BEM KM Fasilkom Unsri berkomitmen menciptakan lingkungan
@@ -100,7 +100,7 @@ const AboutBem = () => {
 
 									{/* caption appears on hover */}
 									<figcaption className="absolute left-0 right-0 bottom-0 bg-gradient-to-b from-[#4A0000] to-[#C2421A] text-white p-4 opacity-0 hover:opacity-100 transition-opacity text-center">
-                                        <p className="font-semibold text-l mt-1">{it.desc}</p>
+										<p className="font-semibold text-sm md:text-base mt-1">{it.desc}</p>
                                     </figcaption>
 
 

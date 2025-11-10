@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../../Assets/Logo/Logo-BEM.png";
+import logo from "../../../Assets/Logo/Logo BEM Putih.svg";
 import styles from "./Style.module.css";
 
 const Footer = () => {
