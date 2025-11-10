@@ -11,19 +11,19 @@ const Who_are_we = () => {
       className="flex text-sm md:text-lg flex-col md:flex-row items-center justify-center gap-10 px-6 md:px-16 py-20 bg-gradient-to-br from-[#fffaf8] to-[#fef6f3]"
     >
       {/* Bagian Kiri (Gambar) */}
-      <div className="relative flex flex-col md:flex-row items-center justify-center gap-6">
+      <div className="relative flex flex-col md:flex-row items-center justify-center gap-6 flex-shrink-0">
         {/* Gambar kiri */}
         <img
           src={PotoKiri}
           alt="Foto Kiri"
-          className="w-60 md:w-96 mt-24 rounded-2xl shadow-lg object-cover"
+          className="w-60 md:w-80 translate-y-8 md:translate-y-12 rounded-2xl shadow-lg object-cover"
         />
 
         {/* Gambar kanan */}
         <img
           src={PotoKanan}
           alt="Foto Kanan"
-          className="w-60 md:w-96 mb-24 rounded-2xl shadow-lg object-cover"
+          className="w-60 md:w-80 -translate-y-8 md:-translate-y-12 rounded-2xl shadow-lg object-cover"
         />
 
         {/* Logo tengah (tumpang tindih di depan gambar) */}
@@ -35,17 +35,17 @@ const Who_are_we = () => {
       </div>
 
       {/* Bagian Kanan (Teks) */}
-      <div className="max-w-3xl font-gotham-book text-[#3E3E3E] text-center md:text-left">
+      <div className="max-w-xl flex-shrink-0 font-gotham-book text-[#3E3E3E] text-center md:text-left">
         <h2 className="text-3xl font-gotham-bold md:text-5xl font-bold mb-4 text-[#030303]">
           Who <span className="text-[#C2421B]">Are</span> We?
         </h2>
 
-        <p className="mb-4 leading-relaxed">
+        <p className="max-w-lg mb-4 leading-relaxed">
           BEM KM Fasilkom Unsri adalah organisasi eksekutif mahasiswa yang
           mewadahi aspirasi, inovasi, dan aksi nyata.
         </p>
 
-        <p className="mb-6 leading-relaxed">
+        <p className="max-w-lg mb-6 leading-relaxed">
           Dengan semangat <span className="italic">Artha Dharma</span>, BEM KM
           Fasilkom Unsri berkomitmen menciptakan lingkungan yang dinamis,
           kolaboratif, dan progresif untuk membentuk mahasiswa yang visioner,
@@ -55,7 +55,7 @@ const Who_are_we = () => {
         {/* Poin list */}
         <ul className="space-y-3">
           <li className="flex items-start gap-3">
-            <span className="text-[#4A0000] text-lg">✔</span>
+            <span className="text-[#4A0000] text-lg flex-shrink-0">✔</span>
             Memiliki total 12 dinas dan 5 bidang
           </li>
           <li className="flex items-start gap-3">
