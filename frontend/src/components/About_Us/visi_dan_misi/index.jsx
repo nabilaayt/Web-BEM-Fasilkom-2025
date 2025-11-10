@@ -25,7 +25,7 @@ const VisiMisi = () => {
             <h3 className="text-xl md:text-2xl font-gotham-bold text-[#111] mb-3">
               Visi
             </h3>
-            <p className="text-sm md:text-base text-gray-700 leading-relaxed mb-6 font-gotham-book">
+            <p className="text-sm md:text-base text-gray-700 leading-relaxed mb-6 font-gotham-book text-justify">
               Terwujudnya BEM KM Fasilkom yang transparan, inklusif, kolaboratif,
               dan responsif, sebagai penggerak perubahan yang berkontribusi
               positif bagi mahasiswa dan masyarakat, serta proaktif dalam
