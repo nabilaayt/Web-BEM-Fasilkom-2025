@@ -147,3 +147,31 @@
   border-top: 1px solid rgba(255, 255, 255, 0.25);
   padding-top: 16px;
 }
+
+/* social icons row in footer */
+.sosmedRow {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.sosmedIcon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  transition: transform 0.16s ease, opacity 0.16s ease;
+  display: block;
+}
+
+.sosmedLink:hover .sosmedIcon {
+  transform: translateY(-4px);
+  opacity: 0.95;
+}
+
+/* small-screen tweak: center social icons under contact list */
+@media (max-width: 768px) {
+  .sosmedRow {
+    justify-content: center;
+  }
+}

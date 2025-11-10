@@ -1,5 +1,8 @@
 import React from "react";
 import logo from "../../../Assets/Logo/Logo BEM Putih.svg";
+import LogoInstagram from "../../../Assets/Logo/Logo Instagram.svg";
+import LogoX from "../../../Assets/Logo/Logo X.svg";
+import LogoYoutube from "../../../Assets/Logo/Logo Youtube.svg";
 import styles from "./Style.module.css";
 
 const Footer = () => {
@@ -20,7 +23,8 @@ const Footer = () => {
 
 
             </div>
-          </div>
+          </div><br />
+
 
           <p>
             Gedung Fakultas Ilmu Komputer
@@ -31,33 +35,61 @@ const Footer = () => {
           </p>
         </div>
         <div className={styles.footerContact}>
-          <h3>Contact Us</h3>
-          <div className="flex-col flex">
+          <h3>CONTACT US</h3><br />
+          <div className="flex flex-col">
             <a href="https://www.linkedin.com/company/bemkmfasilkomunsri/posts/?feedView=all">
-              Linkedin: @bemkmilkomunsri
+              Line: @bemilkomunsri
             </a>
-            <a href="">Email: bemfasilkomunsri@gmail.com</a>
-            <a href="https://www.instagram.com/bemilkomunsri">
-              Instagram: @bemilkomunsri
+            <a href="mailto:bemfasilkomunsri@gmail.com">
+              Email: bemfasilkomunsri@gmail.com
             </a>
-            <a href="https://x.com/bemilkomunsri">X: @bemilkomunsri</a>
-            <a href="https://www.facebook.com/bemilkomunsri?_rdc=2&_rdr#">
-              Facebook: bemilkomunsri
-            </a>
+
+            {/* Social icons row: Instagram, X, YouTube (replacing Facebook) */}
+            <div className={styles.sosmedRow} aria-label="Social media links">
+              <a
+                href="https://x.com/bemilkomunsri"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.sosmedLink}
+                title="X"
+              >
+                <img src={LogoX} alt="X" className={styles.sosmedIcon} />
+              </a>
+
+              <a
+                href="https://www.instagram.com/bemilkomunsri"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.sosmedLink}
+                title="Instagram"
+              >
+                <img src={LogoInstagram} alt="Instagram" className={styles.sosmedIcon} />
+              </a>
+
+              <a
+                href="https://www.youtube.com/@bemilkomunsri"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.sosmedLink}
+                title="YouTube"
+              >
+                <img src={LogoYoutube} alt="YouTube" className={styles.sosmedIcon} />
+              </a>
+            </div>
           </div>
         </div>
         <div className={styles.footerNav}>
-          <h3>Navigation</h3>
-          <ul>
+          <h3>NAVIGATION</h3>
+          <ul><br />
             <li>
               <a href="/">Home</a>
-            </li>
+            </li><br />
             <li>
               <a href="/about">About Us</a>
-            </li>
+            </li><br />
             <li>
               <a href="/profile">Profile</a>
-            </li>
+            </li><br />
             <li>
               <a href="#">BEM Apps</a>
             </li>
