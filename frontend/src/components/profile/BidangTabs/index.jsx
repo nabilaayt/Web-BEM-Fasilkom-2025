@@ -21,7 +21,7 @@ const BidangTabs = ({ activeBidang = 'inti', onBidangChange }) => {
       <div className="container mx-auto px-4">
         {/* Title */}
         <div className="text-center mb-6">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+          <h1 className="text-4xl font-gotham-bold text-gray-900 mb-2">
             Faces of <span className="text-[#4A0000]">Artha Darma</span>
           </h1>
         </div>
@@ -35,10 +35,10 @@ const BidangTabs = ({ activeBidang = 'inti', onBidangChange }) => {
                 <li key={tab.slug}>
                   <button
                     onClick={() => handleTabClick(tab.slug)}
-                    className={`text-base transition-colors duration-150 cursor-pointer ${
-                      isActive ? 'font-bold' : 'font-medium text-gray-700 hover:text-gray-900'
+                    className={`text-lg font-gotham-book transition-colors duration-150 cursor-pointer ${
+                      isActive ? 'font-bold' : 'font-medium text-gray-600 hover:text-[#4a0000]'
                     }`}
-                    style={isActive ? { color: '#4A0000' } : undefined}
+                    style={isActive ? { color: '#4A0000', fontFamily:'Gotham Medium' } : undefined}
                     aria-current={isActive ? 'page' : undefined}
                   >
                     {tab.shortName}

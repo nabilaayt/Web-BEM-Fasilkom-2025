@@ -18,7 +18,6 @@ import rect200 from "../images/Rectangle 200.png";
 
 const ProfileHero = ({
   titleMain = "A warm welcome from the",
-  cabinetName = "KABINET ARTHA DARMA",
   description = "Kami hadir membawa semangat baru untuk berkontribusi, bergerak, dan menginspirasi civitas akademika Fasilkom UNSRI.",
   images = [],
 }) => {
@@ -46,7 +45,14 @@ const ProfileHero = ({
       if (typeof it === "string") return it;
       if (typeof it === "object") {
         return (
-          it.url || it.src || it.foto || it.image || it.path || it.link || it.filename || ""
+          it.url ||
+          it.src ||
+          it.foto ||
+          it.image ||
+          it.path ||
+          it.link ||
+          it.filename ||
+          ""
         );
       }
       return "";
@@ -55,12 +61,20 @@ const ProfileHero = ({
   const displayImages = normalized.length > 0 ? normalized : defaultImages;
 
   // Debug: log image sources so we can inspect in browser console
-  if (typeof window !== 'undefined') {
+  if (typeof window !== "undefined") {
     // Use console.debug so it only appears when devtools open
-    console.debug('ProfileHero displayImages count:', displayImages.length, displayImages);
-    console.log('ProfileHero (ari) loaded — displayImages:', displayImages.length);
+    console.debug(
+      "ProfileHero displayImages count:",
+      displayImages.length,
+      displayImages
+    );
+    console.log(
+      "ProfileHero (ari) loaded — displayImages:",
+      displayImages.length
+    );
   }
-  const fallbackImage = 'https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=600&h=400&fit=crop';
+  const fallbackImage =
+    "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=600&h=400&fit=crop";
 
   return (
     <section className="relative bg-gradient-to-b from-rose-50 via-white to-rose-50/30 py-12 md:py-20 overflow-hidden">
@@ -95,8 +109,15 @@ const ProfileHero = ({
                   src={src1}
                   alt={`img${idx + 1}`}
                   className={`absolute rounded-2xl shadow-lg object-cover`}
-                  style={{ top: col.top1, left: col.left, width: col.w, height: col.h }}
-                  onError={(e) => { e.currentTarget.src = fallbackImage; }}
+                  style={{
+                    top: col.top1,
+                    left: col.left,
+                    width: col.w,
+                    height: col.h,
+                  }}
+                  onError={(e) => {
+                    e.currentTarget.src = fallbackImage;
+                  }}
                 />
               );
               idx++;
@@ -104,15 +125,22 @@ const ProfileHero = ({
               // second slot if defined and image remains
               if (col.slots === 2 && idx < displayImages.length) {
                 const src2 = displayImages[idx];
-                const top2 = col.top2 ?? (col.top1 + col.h + 20);
+                const top2 = col.top2 ?? col.top1 + col.h + 20;
                 items.push(
                   <img
                     key={`img-${idx}`}
                     src={src2}
                     alt={`img${idx + 1}`}
                     className={`absolute rounded-2xl shadow-lg object-cover`}
-                    style={{ top: top2, left: col.left, width: col.w, height: col.h }}
-                    onError={(e) => { e.currentTarget.src = fallbackImage; }}
+                    style={{
+                      top: top2,
+                      left: col.left,
+                      width: col.w,
+                      height: col.h,
+                    }}
+                    onError={(e) => {
+                      e.currentTarget.src = fallbackImage;
+                    }}
                   />
                 );
                 idx++;
@@ -124,22 +152,23 @@ const ProfileHero = ({
         </div>
 
         {/* === Bagian Teks === */}
-        <div className="text-center max-w-3xl mx-auto px-4">
-          <p className="text-lg md:text-xl text-gray-700 font-medium mb-2">
-            A warm <span className="text-[#C2421B] font-semibold">welcome</span> from the
+        <div className="text-center max-w-4xl mx-auto px-4">
+          <p className="text-lg md:text-3xl text-[#030303] font-gotham-medium mb-2">
+            A warm <span className="text-[#C2421B] font-semibold">welcome</span>{" "}
+            from the
           </p>
-          <h1 
-            className="text-3xl md:text-5xl font-serif font-bold tracking-tight mb-4"
-            style={{
-              background: 'linear-gradient(135deg, #810001 4%, #E70001 45%, #BB0001 97%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-            }}
+          <h1
+            className="text-3xl md:text-6xl font-cinzel tracking-tight mb-4 bg-[linear-gradient(to_bottom,#BB0001_40%,#810001_80%)] 
+  bg-clip-text text-transparent"
           >
-            {cabinetName}
+            <span className="cinzel-decorative-bold">K</span>
+            <span className="cinzel-bold">ABINET</span>{" "}
+            <span className="cinzel-decorative-bold">A</span>
+            <span className="cinzel-bold">RTHA</span>{" "}
+            <span className="cinzel-bold">DARM</span>
+            <span className="cinzel-decorative-bold">A</span>
           </h1>
-          <p className="text-gray-700 text-sm md:text-lg leading-relaxed">
+          <p className="text-[#3E3E3E] font-gotham-book text-sm md:text-xl leading-relaxed">
             {description}
           </p>
         </div>

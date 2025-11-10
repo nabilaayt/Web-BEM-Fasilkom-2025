@@ -9,7 +9,7 @@ const Inside_BEM_Apps = () => {
   return (
     <section
       id="inside-bem-apps"
-      className="flex flex-col md:flex-row items-center justify-between gap-10 px-6 md:px-16 py-20 bg-gradient-to-br from-[#fffaf8] to-[#fef6f3]"
+      className="text-sm md:text-base flex flex-col md:flex-row items-center justify-between gap-10 px-6 md:px-16 py-20 bg-gradient-to-br from-[#fffaf8] to-[#fef6f3]"
     >
       {/* Bagian Kiri */}
       <div className="flex-1 max-w-lg">

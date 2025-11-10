@@ -34,7 +34,7 @@ const Navbar = () => {
   ];
 
   return (
-  <nav className="navbar justify-between flex px-4 sm:px-8 lg:px-16 py-2 sm:py-3 lg:py-4 top-0 fixed w-full z-50">
+    <nav className="navbar justify-between flex px-4 sm:px-8 lg:px-16 py-2 sm:py-3 lg:py-4 top-0 fixed w-full z-50">
       {/* Logo */}
       <div>
         <Link
@@ -43,14 +43,20 @@ const Navbar = () => {
         >
           <div className="flex items-center">
             {/* Logo Image - responsive size */}
-            <img src={logo} className="w-12 sm:w-14 lg:w-18" alt="BEM Logo" />
+            <img src={logo} className="w-14 sm:w-16 lg:w-20" alt="BEM Logo" />
 
             {/* Text - hidden on small screens, shown on medium+ */}
             <div className="self-center ml-2 sm:ml-3 lg:ml-4 hidden sm:block">
-              <h1 className="text-base sm:text-xl lg:text-2xl cinzel-bold">
+              <h1
+                className="text-base bg-[linear-gradient(to_bottom,#BB0001_40%,#810001_80%)] 
+  bg-clip-text text-transparent sm:text-xl lg:text-2xl cinzel-bold"
+              >
                 BEM KM FASILKOM UNSRI
               </h1>
-              <div className="text-xs sm:text-sm lg:text-lg">
+              <div
+                className="text-xs sm:text-sm lg:text-lg bg-[linear-gradient(to_bottom,#BB0001_40%,#810001_80%)] 
+  bg-clip-text text-transparent"
+              >
                 <span className="cinzel-decorative-bold">K</span>
                 <span className="cinzel-bold">ABINET</span>{" "}
                 <span className="cinzel-decorative-bold">A</span>
@@ -62,13 +68,23 @@ const Navbar = () => {
 
             {/* Mobile: Only show acronym */}
             <div className="self-center ml-2 sm:hidden">
-              <h1 className="text-sm cinzel-bold">BEM KM FASILKOM UNSRI</h1>
-              <span className="text-xs cinzel-decorative-bold">K</span>
-              <span className="text-xs cinzel-bold">ABINET</span>{" "}
-              <span className="text-xs cinzel-decorative-bold">A</span>
-              <span className="text-xs cinzel-bold">RTHA</span>{" "}
-              <span className="text-xs cinzel-bold">DARM</span>
-              <span className="text-xs cinzel-decorative-bold">A</span>{" "}
+              <h1
+                className="text-sm cinzel-bold bg-[linear-gradient(to_bottom,#BB0001_40%,#810001_80%)] 
+  bg-clip-text text-transparent"
+              >
+                BEM KM FASILKOM UNSRI
+              </h1>
+              <div
+                className="bg-[linear-gradient(to_bottom,#BB0001_40%,#810001_80%)] 
+  bg-clip-text text-transparent"
+              >
+                <span className="text-xs cinzel-decorative-bold">K</span>
+                <span className="text-xs cinzel-bold">ABINET</span>{" "}
+                <span className="text-xs cinzel-decorative-bold">A</span>
+                <span className="text-xs cinzel-bold">RTHA</span>{" "}
+                <span className="text-xs cinzel-bold">DARM</span>
+                <span className="text-xs cinzel-decorative-bold">A</span>{" "}
+              </div>
             </div>
           </div>
         </Link>
@@ -220,4 +236,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;  
+export default Navbar;
