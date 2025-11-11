@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import useInView from "../../../hooks/useInView.jsx";
 import Img1 from "../images/1.png";
 import Img2 from "../images/2.png";
 import Img3 from "../images/3.png";
@@ -50,13 +51,18 @@ const AboutBem = () => {
         { img: Img7, title: "Open Recruitment", desc: "FEM X BEM FTI UNAND" },
 	];
 
+	const [ref, inView] = useInView({ threshold: 0.08, once: true });
+
 	return (
-		<section className="w-full bg-transparent py-12">
-				<div className="max-w-[1750px] mx-auto px-6">
+		<section ref={ref} className="w-full bg-transparent py-12">
+					<div className="max-w-[1750px] mx-auto px-6">
                     
-					<div className="flex flex-col md:flex-row items-start gap-28 ">
+						<div className="flex flex-col md:flex-row items-start gap-28 ">
+						{/* observe section to trigger animations */}
+                    
+                    
 					{/* Left - About text */}
-						<div ref={leftColRef} className="md:w-5/12">
+						<div ref={leftColRef} className={`md:w-5/12 animate-stagger ${inView ? 'animate-play' : ''}`}>
 						<h3 className="text-2xl md:text-3xl font-semibold text-[#4a0000] mb-4 font-gotham-bold">
 							<span className="text-black">About</span> BEM KM Fasilkom UNSRI
 						</h3>
@@ -73,7 +79,7 @@ const AboutBem = () => {
 								<div className="md:w-7/12 relative">
 									<div
 										ref={scrollRef}
-										className={`flex gap-6 overflow-x-auto no-scrollbar py-4 px-2 touch-pan-x snap-x snap-mandatory ${desktopWidth ? 'absolute top-0 right-0' : ''}`} 
+											className={`flex gap-6 overflow-x-auto no-scrollbar py-4 px-2 touch-pan-x snap-x snap-mandatory ${desktopWidth ? 'absolute top-0 right-0' : ''}`} 
 										onPointerDown={handlePointerDown}
 										onPointerMove={handlePointerMove}
 										onPointerUp={handlePointerUp}
@@ -88,9 +94,9 @@ const AboutBem = () => {
 										}}
 									>
 							{items.map((it, idx) => (
-								<figure
-									key={idx}
-									className="relative min-w-[260px] md:min-w-[320px] lg:min-w-[380px] h-56 md:h-64 rounded-xl overflow-hidden snap-start bg-white/5 drop-shadow"
+				<figure
+										key={idx}
+					className={`relative min-w-[260px] md:min-w-[320px] lg:min-w-[380px] h-56 md:h-64 rounded-xl overflow-hidden snap-start bg-white/5 drop-shadow ${inView ? 'animate-scale' : ''}`}
 								>
 									<img
 										src={it.img}

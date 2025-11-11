@@ -41,3 +41,68 @@
   font-weight: normal;
   font-style: normal;
 }
+
+/* --- small animation utilities (modern, subtle, dependency-free) --- */
+
+:root{
+  --anim-ease: cubic-bezier(.2,.9,.3,1);
+  --anim-duration: 520ms;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* gentle floating used by some hero images (already referenced) */
+@keyframes floatSlow {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fadeUp var(--anim-duration) var(--anim-ease) both;
+}
+
+.animate-fade {
+  animation: fadeIn calc(var(--anim-duration) * .9) var(--anim-ease) both;
+}
+
+.animate-scale {
+  animation: scaleIn var(--anim-duration) var(--anim-ease) both;
+}
+
+.animate-stagger > * {
+  opacity: 0;
+  transform: translateY(6px);
+}
+.animate-stagger.animate-play > * {
+  animation: fadeUp var(--anim-duration) var(--anim-ease) both;
+}
+.animate-stagger.animate-play > *:nth-child(1){ animation-delay: 0ms; }
+.animate-stagger.animate-play > *:nth-child(2){ animation-delay: 80ms; }
+.animate-stagger.animate-play > *:nth-child(3){ animation-delay: 160ms; }
+.animate-stagger.animate-play > *:nth-child(4){ animation-delay: 240ms; }
+
+/* helper for slow float (used by some images already) */
+.animate-float-slow { animation: floatSlow 6s ease-in-out infinite; }
+
+/* hover micro-interactions */
+.hover-pop:hover { transform: translateY(-4px) scale(1.02); transition: transform 180ms var(--anim-ease); }
+
+/* reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up, .animate-fade, .animate-scale, .animate-float-slow, .animate-stagger.animate-play > * { animation: none !important; transform: none !important; }
+}
+

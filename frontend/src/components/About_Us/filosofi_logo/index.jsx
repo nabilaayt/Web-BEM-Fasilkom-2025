@@ -1,0 +1,7 @@
+
+
+const FilosofiLogo = () => {
+     return(
+        
+     );
+};

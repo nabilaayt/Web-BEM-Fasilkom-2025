@@ -1,0 +1,4 @@
+/* file global CSS misalnya index.css atau App.css */
+.gap-8 {
+  gap: 4rem !important;
+}

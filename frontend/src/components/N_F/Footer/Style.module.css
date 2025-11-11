@@ -169,6 +169,15 @@
   opacity: 0.95;
 }
 
+/* colour control for inline SVG icons */
+.sosmedLink {
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.sosmedLink:hover { color: #ffc107; }
+
 /* small-screen tweak: center social icons under contact list */
 @media (max-width: 768px) {
   .sosmedRow {

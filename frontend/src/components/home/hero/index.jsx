@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative flex flex-col items-center justify-center min-h-screen text-center px-4 bg-gradient-to-b from-[#fffaf8] to-[#fef6f3]"
+      className="relative flex flex-col items-center justify-center min-h-screen text-center px-4 bg-gradient-to-b from-[#fffaf8] to-[#fef6f3] animate-scale"
     >
       {/* ===== TEKS UTAMA ===== */}
       <h2 className="text-base md:text-3xl font-gotham-bold text-black mb-2">

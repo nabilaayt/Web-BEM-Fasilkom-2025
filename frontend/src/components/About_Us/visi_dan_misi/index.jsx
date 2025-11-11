@@ -1,18 +1,21 @@
 import React from "react";
+import useInView from "../../../hooks/useInView.jsx";
 import LogoCombined from "../images/Logo Visi dan Misi.svg";
 
 const VisiMisi = () => {
+  const [ref, inView] = useInView({ threshold: 0.06, once: true });
+
   return (
-    <section className="py-16 bg-gradient-to-r from-white to-[#fff6f5]">
+    <section ref={ref} className="py-16 bg-gradient-to-r from-white to-[#fff6f5] animate-fade-up">
       <div className="max-w-[1500px] mx-auto px-6">
         <h2 className="text-center text-3xl md:text-4xl font-bold mb-10 font-gotham-bold">
           Visi & <span className="text-[#4A0000]">Misi</span>
         </h2>
 
         {/* Container untuk logo dan konten */}
-        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 lg:gap-[16rem]">
+  <div className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 lg:gap-[16rem] animate-stagger ${inView ? 'animate-play' : ''}`}>
           {/* Logo kiri */}
-          <div className="w-full md:w-5/12 flex items-center justify-center">
+          <div className={`w-full md:w-5/12 flex items-center justify-center ${inView ? 'animate-scale' : ''}`}>
             <img
               src={LogoCombined}
               alt="Logo Visi dan Misi"
