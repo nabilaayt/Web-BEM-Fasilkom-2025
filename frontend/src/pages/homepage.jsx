@@ -17,7 +17,7 @@ const Homepage = () => {
         <Hero />
         <Who_are_we />
         <Inside_BEM_Apps />
-  <PeopleSayAboutUs />
+        <PeopleSayAboutUs />
         {/* <Footer /> */}
       </div>
     </main>

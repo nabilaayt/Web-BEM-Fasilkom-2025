@@ -3,7 +3,7 @@ import Advokasi from "../../../Assets/Photo-Home/Advokasi.svg";
 import Inisiatif from "../../../Assets/Photo-Home/Inisiatif.svg";
 import Kolaborasi from "../../../Assets/Photo-Home/Kolaborasi.svg";
 
-const Hero = () => {
+const hero = () => {
   return (
     <section
       id="hero"
@@ -17,8 +17,8 @@ const Hero = () => {
 
       <h1
         className="text-2xl md:text-6xl font-cinzel font-bold mb-4 
-  bg-[linear-gradient(to_bottom,#BB0001_40%,#810001_80%)] 
-  bg-clip-text text-transparent"
+        bg-[linear-gradient(to_bottom,#BB0001_40%,#810001_80%)] 
+        bg-clip-text text-transparent"
       >
         BEM KM FASILKOM UNSRI
       </h1>
@@ -68,4 +68,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default hero;
