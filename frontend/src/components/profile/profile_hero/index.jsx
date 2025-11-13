@@ -1,16 +1,15 @@
 import React from "react";
-import "./Style.css";
 
 // Import local hero images so the bundler resolves their URLs (prevents 404s)
 import rect188 from "../images/Rectangle 188.png";
 import rect189 from "../images/Rectangle 189.png";
 import rect190 from "../images/Rectangle 190.png";
 import rect191 from "../images/Rectangle 191.png";
-import rect192 from "../images/Rectangle 192.png";
-import rect193 from "../images/Rectangle 193.png";
+import rect192 from "../images/Rectangle 195.png";
+import rect193 from "../images/Rectangle 196.png";
 import rect194 from "../images/Rectangle 194.png";
-import rect195 from "../images/Rectangle 195.png";
-import rect196 from "../images/Rectangle 196.png";
+import rect195 from "../images/Rectangle 193.png";
+import rect196 from "../images/Rectangle 192.png";
 import rect197 from "../images/Rectangle 197.png";
 import rect198 from "../images/Rectangle 198.png";
 import rect199 from "../images/Rectangle 199.png";
@@ -62,7 +61,6 @@ const ProfileHero = ({
 
   // Debug: log image sources so we can inspect in browser console
   if (typeof window !== "undefined") {
-    // Use console.debug so it only appears when devtools open
     console.debug(
       "ProfileHero displayImages count:",
       displayImages.length,
@@ -73,82 +71,182 @@ const ProfileHero = ({
       displayImages.length
     );
   }
+
   const fallbackImage =
     "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=600&h=400&fit=crop";
 
   return (
     <section className="relative bg-gradient-to-b from-rose-50 via-white to-rose-50/30 py-12 md:py-20 overflow-hidden">
-      <div className="container mx-auto px-4">
-        {/* === Mosaik Gambar Absolute === */}
-        <div className="relative w-full max-w-[1600px] h-[380px] mx-auto mb-12">
-          {/* Dynamic 9-column mosaic: columns 1,2,8,9 have 2 images (stacked); others have 1 image */}
-          {(() => {
-            // Increase horizontal gaps and make images larger so the mosaic breathes more
-            const cols = [
-              { left: 0, w: 160, h: 200, top1: 20, top2: 240, slots: 2 },
-              { left: 170, w: 160, h: 200, top1: 0, top2: 210, slots: 2 },
-              { left: 340, w: 170, h: 210, top1: 95, slots: 1 },
-              { left: 520, w: 180, h: 220, top1: 10, slots: 1 },
-              { left: 710, w: 160, h: 200, top1: 60, slots: 1 },
-              { left: 880, w: 160, h: 200, top1: 20, slots: 1 },
-              { left: 1050, w: 160, h: 200, top1: 115, slots: 1 },
-              { left: 1220, w: 160, h: 200, top1: 0, top2: 210, slots: 2 },
-              { left: 1392, w: 160, h: 200, top1: 25, top2: 250, slots: 2 },
-            ];
-
-            const items = [];
-            let idx = 0;
-            for (let c = 0; c < cols.length; c++) {
-              const col = cols[c];
-              if (idx >= displayImages.length) break;
-              // first slot
-              const src1 = displayImages[idx];
-              items.push(
+      <div className="container mx-auto px-4 max-w-[1400px]">
+        {/* === Mosaic Grid dengan CSS Grid - Responsive === */}
+        <div className="relative w-full mb-12">
+          <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-2 md:gap-3 lg:gap-4 max-w-full mx-auto">
+            {/* Column 1 - 2 images stacked */}
+            <div className="flex flex-col gap-2 md:gap-3 lg:gap-4 md:mt-16">
+              {displayImages[0] && (
                 <img
-                  key={`img-${idx}`}
-                  src={src1}
-                  alt={`img${idx + 1}`}
-                  className={`absolute rounded-2xl shadow-lg object-cover`}
-                  style={{
-                    top: col.top1,
-                    left: col.left,
-                    width: col.w,
-                    height: col.h,
-                  }}
+                  src={displayImages[0]}
+                  alt="Team 1"
+                  className="w-full h-32 md:h-40 lg:h-48 rounded-xl shadow-lg object-cover"
                   onError={(e) => {
                     e.currentTarget.src = fallbackImage;
                   }}
                 />
-              );
-              idx++;
+              )}
+              {displayImages[1] && (
+                <img
+                  src={displayImages[1]}
+                  alt="Team 2"
+                  className="w-full h-32 md:h-40 lg:h-48 rounded-xl shadow-lg object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = fallbackImage;
+                  }}
+                />
+              )}
+            </div>
 
-              // second slot if defined and image remains
-              if (col.slots === 2 && idx < displayImages.length) {
-                const src2 = displayImages[idx];
-                const top2 = col.top2 ?? col.top1 + col.h + 20;
-                items.push(
-                  <img
-                    key={`img-${idx}`}
-                    src={src2}
-                    alt={`img${idx + 1}`}
-                    className={`absolute rounded-2xl shadow-lg object-cover`}
-                    style={{
-                      top: top2,
-                      left: col.left,
-                      width: col.w,
-                      height: col.h,
-                    }}
-                    onError={(e) => {
-                      e.currentTarget.src = fallbackImage;
-                    }}
-                  />
-                );
-                idx++;
-              }
-            }
+            {/* Column 2 - 2 images stacked with offset */}
+            <div className="flex flex-col gap-2 md:gap-3 lg:gap-4 md:mt-4">
+              {displayImages[2] && (
+                <img
+                  src={displayImages[2]}
+                  alt="Team 3"
+                  className="w-full h-32 md:h-40 lg:h-48 rounded-xl shadow-lg object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = fallbackImage;
+                  }}
+                />
+              )}
+              {displayImages[3] && (
+                <img
+                  src={displayImages[3]}
+                  alt="Team 4"
+                  className="w-full h-32 md:h-40 lg:h-48 rounded-xl shadow-lg object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = fallbackImage;
+                  }}
+                />
+              )}
+            </div>
 
-            return items;
-          })()}
+            {/* Column 3 - 1 image centered (hidden on mobile) */}
+            <div className="hidden md:flex flex-col justify-center">
+              {displayImages[4] && (
+                <img
+                  src={displayImages[4]}
+                  alt="Team 5"
+                  className="w-full h-40 lg:h-52 rounded-xl shadow-lg object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = fallbackImage;
+                  }}
+                />
+              )}
+            </div>
+
+            {/* Column 4 - 1 image top aligned (hidden on mobile) */}
+            <div className="hidden md:flex flex-col md:mt-10">
+              {displayImages[5] && (
+                <img
+                  src={displayImages[5]}
+                  alt="Team 6"
+                  className="w-full h-40 lg:h-52 rounded-xl shadow-lg object-cover mt-0 lg:mt-2"
+                  onError={(e) => {
+                    e.currentTarget.src = fallbackImage;
+                  }}
+                />
+              )}
+            </div>
+
+            {/* Column 5 - 1 image middle aligned (hidden on tablet) */}
+            <div className="hidden lg:flex flex-col justify-center md:-mt-28">
+              {displayImages[6] && (
+                <img
+                  src={displayImages[6]}
+                  alt="Team 7"
+                  className="w-full h-48 rounded-xl shadow-lg object-cover mt-8"
+                  onError={(e) => {
+                    e.currentTarget.src = fallbackImage;
+                  }}
+                />
+              )}
+            </div>
+
+            {/* Column 6 - 1 image top aligned (hidden on tablet) */}
+            <div className="hidden lg:flex flex-col md:mt-6">
+              {displayImages[7] && (
+                <img
+                  src={displayImages[7]}
+                  alt="Team 8"
+                  className="w-full h-48 rounded-xl shadow-lg object-cover mt-4"
+                  onError={(e) => {
+                    e.currentTarget.src = fallbackImage;
+                  }}
+                />
+              )}
+            </div>
+
+            {/* Column 7 - 1 image bottom aligned (hidden on tablet) */}
+            <div className="hidden lg:flex flex-col justify-center">
+              {displayImages[8] && (
+                <img
+                  src={displayImages[8]}
+                  alt="Team 9"
+                  className="w-full h-48 rounded-xl shadow-lg object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = fallbackImage;
+                  }}
+                />
+              )}
+            </div>
+
+            {/* Column 8 - 2 images stacked (hidden on tablet) */}
+            <div className="hidden lg:flex flex-col gap-4 md:mt-4">
+              {displayImages[9] && (
+                <img
+                  src={displayImages[9]}
+                  alt="Team 10"
+                  className="w-full h-48 rounded-xl shadow-lg object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = fallbackImage;
+                  }}
+                />
+              )}
+              {displayImages[10] && (
+                <img
+                  src={displayImages[10]}
+                  alt="Team 11"
+                  className="w-full h-48 rounded-xl shadow-lg object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = fallbackImage;
+                  }}
+                />
+              )}
+            </div>
+
+            {/* Column 9 - 2 images stacked (hidden on tablet) */}
+            <div className="hidden lg:flex flex-col gap-4 md:mt-16">
+              {displayImages[11] && (
+                <img
+                  src={displayImages[11]}
+                  alt="Team 12"
+                  className="w-full h-48 rounded-xl shadow-lg object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = fallbackImage;
+                  }}
+                />
+              )}
+              {displayImages[12] && (
+                <img
+                  src={displayImages[12]}
+                  alt="Team 13"
+                  className="w-full h-48 rounded-xl shadow-lg object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = fallbackImage;
+                  }}
+                />
+              )}
+            </div>
+          </div>
         </div>
 
         {/* === Bagian Teks === */}
