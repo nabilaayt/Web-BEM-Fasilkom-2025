@@ -200,12 +200,12 @@ const ProfileHero = ({
             </div>
 
             {/* Column 8 - 2 images stacked (hidden on tablet) */}
-            <div className="hidden lg:flex flex-col gap-4 md:mt-4">
+            <div className="flex flex-col gap-2 md:gap-3 lg:gap-4 md:mt-4">
               {displayImages[9] && (
                 <img
                   src={displayImages[9]}
                   alt="Team 10"
-                  className="w-full h-48 rounded-xl shadow-lg object-cover"
+                  className="w-full h-32 md:h-48 rounded-xl shadow-lg object-cover"
                   onError={(e) => {
                     e.currentTarget.src = fallbackImage;
                   }}
@@ -215,7 +215,7 @@ const ProfileHero = ({
                 <img
                   src={displayImages[10]}
                   alt="Team 11"
-                  className="w-full h-48 rounded-xl shadow-lg object-cover"
+                  className="w-full h-32 md:h-48 rounded-xl shadow-lg object-cover"
                   onError={(e) => {
                     e.currentTarget.src = fallbackImage;
                   }}
