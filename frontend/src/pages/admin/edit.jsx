@@ -24,13 +24,15 @@ const EditDinas = () => {
   useEffect(() => {
     fetchKategoriDinas();
     fetchPengurusData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   const fetchKategoriDinas = async () => {
     try {
       const data = await dinasService.getAllKategoriDinas();
       setKategoriDinas(data);
-    } catch (error) {
+    } catch (err) {
+      console.error(err);
       toast.error("Gagal memuat kategori dinas");
     }
   };
@@ -46,7 +48,8 @@ const EditDinas = () => {
         foto: null,
       });
       setCurrentFoto(data.foto);
-    } catch (error) {
+    } catch (err) {
+      console.error(err);
       toast.error("Gagal memuat data pengurus");
       navigate("/admin/manage-staff");
     }
@@ -154,7 +157,7 @@ const EditDinas = () => {
                 name="nama"
                 value={formData.nama}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4a0000] focus:border-transparent"
                 placeholder="Masukkan nama lengkap"
                 required
               />
@@ -169,7 +172,7 @@ const EditDinas = () => {
                 name="jabatan"
                 value={formData.jabatan}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4a0000] focus:border-transparent"
                 required
               >
                 <option value="Staff">Staff</option>
@@ -189,7 +192,7 @@ const EditDinas = () => {
                 name="divisi"
                 value={formData.divisi}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4a0000] focus:border-transparent"
                 placeholder="Contoh: Divisi Media & Informasi"
                 required
               />
@@ -204,7 +207,7 @@ const EditDinas = () => {
                 name="kategoriDinasId"
                 value={formData.kategoriDinasId}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#4a0000] focus:border-transparent"
                 required
               >
                 <option value="">Pilih Kategori Dinas</option>
@@ -259,7 +262,7 @@ const EditDinas = () => {
 
               {/* Upload Button */}
               {!preview && (
-                <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-blue-500 transition-colors">
+                <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-[#4a0000]/90 transition-colors">
                   <input
                     type="file"
                     id="foto"
@@ -295,7 +298,7 @@ const EditDinas = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="flex-1 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-semibold"
+                className="flex-1 px-6 py-3 bg-[#4a0000] text-white rounded-lg hover:bg-[#4a0000]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-semibold"
               >
                 {loading ? "Menyimpan..." : "Update"}
               </button>

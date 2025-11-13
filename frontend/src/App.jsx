@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import { AuthProvider } from "./utils/authContext";
 import ProtectedRoute from "./utils/ProtectedRoute";
@@ -6,6 +6,8 @@ import ProtectedRoute from "./utils/ProtectedRoute";
 import Homepage from "./pages/homepage";
 import About from "./pages/aboutuspage";
 import Login from "./pages/Login";
+import DinasProfilePage from "./pages/DinasProfilePage";
+import ProfilePage from "./pages/ProfilePage";
 
 import Navbar from "./components/N_F/Navbar/Navbar";
 import Footer from "./components/N_F/Footer/Footer";
@@ -66,6 +68,35 @@ function App() {
             </PublicLayout>
           }
         />
+        <Route
+          path="/dinas/:dinasId"
+          element={
+            <PublicLayout>
+              <DinasProfilePage />
+            </PublicLayout>
+          }
+        />
+        {/* Profile Routes - NEW UNIFIED SYSTEM */}
+        <Route
+          path="/profile"
+          element={
+            <PublicLayout>
+              <ProfilePage />
+            </PublicLayout>
+          }
+        />
+        <Route
+          path="/profile/:bidangSlug"
+          element={
+            <PublicLayout>
+              <ProfilePage />
+            </PublicLayout>
+          }
+        />
+
+        {/* Backward compatibility redirects for old bidang URLs */}
+        <Route path="/profile/inti" element={<Navigate to="/profile" replace />} />
+        
         <Route
           path="/about"
           element={
@@ -143,7 +174,7 @@ function App() {
                   </p>
                   <a
                     href="/"
-                    className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors inline-block"
+                    className="px-6 py-3 bg-[#4a0000] text-white rounded-lg hover:bg-[#4a0000]/90 transition-colors inline-block"
                   >
                     Kembali ke Beranda
                   </a>

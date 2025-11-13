@@ -1,0 +1,40 @@
+.dinas-profile {
+  @apply bg-gradient-to-b from-white to-gray-100;
+}
+
+.member-card {
+  @apply transition-transform duration-300;
+}
+
+.member-card:hover {
+  @apply transform scale-105;
+}
+
+.section-title {
+  @apply text-2xl font-bold text-center mb-8 relative;
+}
+
+.section-title::after {
+  content: '';
+  @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-red-600;
+}
+
+.member-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center;
+}
+
+/* Animasi fade-in untuk cards */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.member-card {
+  animation: fadeIn 0.5s ease-out forwards;
+}

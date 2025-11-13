@@ -1,24 +1,28 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from "react-router-dom";
 import {
-  MdDashboard,        // Material Design Icons
+  MdDashboard, // Material Design Icons
   MdPeople,
   MdLogout,
   MdHome,
   MdFolder,
-  MdLayers
-} from 'react-icons/md';
-import { useAuth } from '../../utils/authContext';
+  MdLayers,
+} from "react-icons/md";
+import { useAuth } from "../../utils/authContext";
 
 const Sidebar = () => {
   const location = useLocation();
   const { logout, user } = useAuth();
 
   const menuItems = [
-    { path: '/admin', icon: MdDashboard, label: 'Dashboard' },
-    { path: '/admin/addStaff', icon: MdPeople, label: 'Tambah Pengurus' },
-    { path: '/admin/manage-staff', icon: MdPeople, label: 'Kelola Pengurus' },
-    { path: '/admin/manage-bidang', icon: MdFolder, label: 'Kelola Bidang' },
-    { path: '/admin/manage-kategori-dinas', icon: MdLayers, label: 'Kelola Kategori Dinas' },
+    { path: "/admin", icon: MdDashboard, label: "Dashboard" },
+    { path: "/admin/addStaff", icon: MdPeople, label: "Tambah Pengurus" },
+    { path: "/admin/manage-staff", icon: MdPeople, label: "Kelola Pengurus" },
+    { path: "/admin/manage-bidang", icon: MdFolder, label: "Kelola Bidang" },
+    {
+      path: "/admin/manage-kategori-dinas",
+      icon: MdLayers,
+      label: "Kelola Kategori Dinas",
+    },
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -28,7 +32,7 @@ const Sidebar = () => {
       {/* Logo */}
       <div className="p-6 border-b border-gray-800">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
+          <div className="w-10 h-10 bg-gradient-to-br from-[#4a0000] to-indigo-600 rounded-lg flex items-center justify-center">
             <span className="text-white font-bold">BEM</span>
           </div>
           <div>
@@ -53,8 +57,8 @@ const Sidebar = () => {
                 to={item.path}
                 className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 ${
                   isActive(item.path)
-                    ? 'bg-blue-600 text-white shadow-lg'
-                    : 'text-gray-300 hover:bg-gray-800'
+                    ? "bg-[#4a0000] text-white shadow-lg"
+                    : "text-gray-300 hover:bg-gray-800"
                 }`}
               >
                 <item.icon className="w-5 h-5" />

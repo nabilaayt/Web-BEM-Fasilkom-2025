@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import authService from "../services/authService";
@@ -26,7 +27,8 @@ export const AuthProvider = ({ children }) => {
     try {
       const userData = await authService.getCurrentUser();
       setUser(userData);
-    } catch (error) {
+    } catch (err) {
+      console.error(err);
       setUser(null);
     } finally {
       setLoading(false);
@@ -53,7 +55,8 @@ export const AuthProvider = ({ children }) => {
       toast.success("Logout berhasil!");
       navigate("/");
       setTimeout(() => setUser(null), 100);
-    } catch (error) {
+    } catch (err) {
+      console.error(err);
       toast.error("Logout gagal");
     }
   };

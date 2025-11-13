@@ -47,9 +47,9 @@ const Dashboard = () => {
       title: "Total Pengurus",
       value: stats.totalPengurus,
       icon: UserGroupIcon,
-      color: "from-blue-500 to-blue-600",
-      iconBg: "bg-blue-100",
-      iconColor: "text-blue-600",
+      color: "from-[#4a0000]/90 to-[#4a0000]",
+      iconBg: "bg-amber-800",
+      iconColor: "text-[#4a0000]",
     },
     {
       title: "BPH",
@@ -93,7 +93,7 @@ const Dashboard = () => {
         {/* Stats Grid */}
         {loading ? (
           <div className="flex items-center justify-center py-20">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#4a0000]"></div>
           </div>
         ) : (
           <>
@@ -128,12 +128,12 @@ const Dashboard = () => {
               <div className="grid md:grid-cols-2 gap-4">
                 <Link
                   to="/admin/manage-staff"
-                  className="flex items-center gap-4 p-6 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl hover:shadow-lg transition-all duration-300"
+                  className="flex items-center gap-4 p-6 bg-gradient-to-r from-[#4a0000]/90 to-[#4a0000] text-white rounded-xl hover:shadow-lg transition-all duration-300"
                 >
                   <UserGroupIcon className="w-8 h-8" />
                   <div>
                     <h3 className="font-bold text-lg">Kelola Pengurus</h3>
-                    <p className="text-blue-100 text-sm">
+                    <p className="text-amber-800 text-sm">
                       Tambah, edit, atau hapus data pengurus
                     </p>
                   </div>
