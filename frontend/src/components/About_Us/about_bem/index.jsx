@@ -54,7 +54,7 @@ const AboutBem = () => {
 	const [ref, inView] = useInView({ threshold: 0.08, once: true });
 
 	return (
-		<section ref={ref} className="w-full bg-transparent py-12">
+		<section ref={ref} className="w-full bg-transparent px-4 sm:px-8 lg:px-16 py-12">
 					<div className="max-w-[1750px] mx-auto px-6">
                     
 						<div className="flex flex-col md:flex-row items-start gap-28 ">

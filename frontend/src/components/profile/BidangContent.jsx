@@ -170,7 +170,7 @@ const BidangContent = ({ bidangSlug }) => {
   return (
     <>
       {/* Page-specific header */}
-      <div className="py-8">
+      <div className="py-8 px-4 sm:px-8 lg:px-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-3xl font-gotham-bold mb-6">{config.title}</h1>
           <p className="font-gotham-book text-gray-600 text-lg max-w-3xl mx-auto">{config.description}</p>

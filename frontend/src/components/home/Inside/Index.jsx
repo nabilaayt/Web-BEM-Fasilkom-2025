@@ -46,9 +46,9 @@ const Inside_BEM_Apps = () => {
   return (
     <section
       id="inside-bem-apps"
-      className="text-sm md:text-base px-6 md:px-16 py-20 bg-gradient-to-br from-[#fffaf8] to-[#fef6f3]"
+      className="text-sm md:text-base px-4 sm:px-8 lg:px-16 py-20"
     >
-      <div className="max-w-[1400px] mx-auto">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 ">
         <h2 className="text-3xl md:text-4xl font-gotham-bold text-center text-gray-900 mb-2">
           Inside <span className="text-[#C2421A]">BEM</span> Apps
         </h2><br />
@@ -100,6 +100,8 @@ const Inside_BEM_Apps = () => {
               </button>
             </a>
           </div>
+
+          <div className="circlePosition w-[260px] h-[200px] bg-[#FBBF6A] rounded-full absolute z-1 top-[80%] left-[10%] -translate-x-1/2 -translate-y-1/2 blur-[260px]"></div>
 
           {/* Right image */}
           <div className="md:w-1/2 flex justify-center">

@@ -8,7 +8,7 @@ const Who_are_we = () => {
   return (
     <section
       id="who-are-we"
-      className="flex text-sm md:text-lg flex-col md:flex-row items-center justify-center gap-10 px-6 md:px-16 py-20 bg-gradient-to-br from-[#fffaf8] to-[#fef6f3]"
+      className="flex text-sm md:text-lg flex-col md:flex-row items-center justify-between gap-10 px-4 sm:px-8 lg:px-16 py-20"
     >
       {/* Bagian Kiri (Gambar) */}
       <div className="relative flex flex-col md:flex-row items-center justify-center gap-6 flex-shrink-0">
@@ -75,6 +75,8 @@ const Who_are_we = () => {
         >
           More About Bem
         </Link>
+
+        <div className="circlePosition w-[260px] h-[200px] bg-[#4A0000] rounded-full absolute z-1 top-[50%] left-[90%] -translate-x-1/2 -translate-y-1/2 blur-[260px]"></div>
       </div>
     </section>
   );

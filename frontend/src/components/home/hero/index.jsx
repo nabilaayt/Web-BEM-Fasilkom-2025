@@ -7,7 +7,7 @@ const hero = () => {
   return (
     <section
       id="hero"
-      className="relative flex flex-col items-center justify-center min-h-screen text-center px-4 bg-gradient-to-b from-[#fffaf8] to-[#fef6f3] animate-scale"
+      className="relative flex flex-col items-center justify-center min-h-screen text-center px-4 sm:px-8 lg:px-16 animate-scale"
     >
       {/* ===== TEKS UTAMA ===== */}
       <h2 className="text-base md:text-3xl font-gotham-bold text-black mb-2">
@@ -64,6 +64,11 @@ const hero = () => {
         alt="Advokasi"
         className="absolute right-16 md:right-80 bottom-24 w-28 md:w-36 animate-float-slow"
       />
+
+      <div className="circlePosition w-[260px] h-[200px] bg-[#4A0000] rounded-full absolute z-1 top-[80%] left-[8%] -translate-x-1/2 -translate-y-1/2 blur-[180px]"></div>
+      <div className="circlePosition w-[260px] h-[200px] bg-[#FBBF6A] rounded-full absolute z-1 top-[80%] left-[34%] -translate-x-1/2 -translate-y-1/2 blur-[180px]"></div>
+      <div className="circlePosition w-[260px] h-[200px] bg-[#4A0000] rounded-full absolute z-1 top-[80%] left-[64%] -translate-x-1/2 -translate-y-1/2 blur-[180px]"></div>
+      <div className="circlePosition w-[260px] h-[200px] bg-[#FBBF6A] rounded-full absolute z-1 top-[80%] left-[90%] -translate-x-1/2 -translate-y-1/2 blur-[180px]"></div>
     </section>
   );
 };

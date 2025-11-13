@@ -76,7 +76,7 @@ const ProfileHero = ({
     "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=600&h=400&fit=crop";
 
   return (
-    <section className="relative bg-gradient-to-b from-rose-50 via-white to-rose-50/30 py-12 md:py-20 overflow-hidden">
+    <section className="relative px-4 sm:px-8 lg:px-16 py-12 md:py-20 overflow-hidden">
       <div className="container mx-auto px-4 max-w-[1400px]">
         {/* === Mosaic Grid dengan CSS Grid - Responsive === */}
         <div className="relative w-full mb-12">
@@ -271,6 +271,10 @@ const ProfileHero = ({
           </p>
         </div>
       </div>
+      <div className="circlePosition w-[260px] h-[200px] bg-[#4A0000] rounded-full absolute z-1 top-[80%] left-[8%] -translate-x-1/2 -translate-y-1/2 blur-[180px]"></div>
+      <div className="circlePosition w-[260px] h-[200px] bg-[#FBBF6A] rounded-full absolute z-1 top-[80%] left-[34%] -translate-x-1/2 -translate-y-1/2 blur-[180px]"></div>
+      <div className="circlePosition w-[260px] h-[200px] bg-[#4A0000] rounded-full absolute z-1 top-[80%] left-[64%] -translate-x-1/2 -translate-y-1/2 blur-[180px]"></div>
+      <div className="circlePosition w-[260px] h-[200px] bg-[#FBBF6A] rounded-full absolute z-1 top-[80%] left-[90%] -translate-x-1/2 -translate-y-1/2 blur-[180px]"></div>
     </section>
   );
 };

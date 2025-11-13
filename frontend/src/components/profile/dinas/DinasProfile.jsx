@@ -93,7 +93,7 @@ const DinasProfile = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-100 to-white">
+    <div className="min-h-screen px-4 sm:px-8 lg:px-16">
       <div className="container mx-auto px-4 pt-12 pb-6 text-center">
         <h1 className="text-4xl font-bold mb-4">Faces of Artha Darma</h1>
         

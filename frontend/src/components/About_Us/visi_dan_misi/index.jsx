@@ -6,11 +6,13 @@ const VisiMisi = () => {
   const [ref, inView] = useInView({ threshold: 0.06, once: true });
 
   return (
-    <section ref={ref} className="py-16 bg-gradient-to-r from-white to-[#fff6f5] animate-fade-up">
+    <section ref={ref} className="px-4 sm:px-8 lg:px-16 py-16 animate-fade-up">
       <div className="max-w-[1500px] mx-auto px-6">
         <h2 className="text-center text-3xl md:text-4xl font-bold mb-10 font-gotham-bold">
           Visi & <span className="text-[#4A0000]">Misi</span>
         </h2>
+
+        <div className="circlePosition w-[260px] h-[200px] bg-[#4A0000] rounded-full absolute z-1 top-[50%] left-[90%] -translate-x-1/2 -translate-y-1/2 blur-[260px]"></div>
 
         {/* Container untuk logo dan konten */}
   <div className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 lg:gap-[16rem] animate-stagger ${inView ? 'animate-play' : ''}`}>

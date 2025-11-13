@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { CiMenuBurger } from "react-icons/ci";
 import "./style.css";
-import logo from "../../../Assets/Logo/Logo-BEM.png";
+import logo from "../../../Assets/Logo/Just Logo BEM.png";
 import { useAuth } from "../../../utils/authContext";
 
 const Navbar = () => {
@@ -34,7 +34,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="navbar justify-between flex px-4 sm:px-8 lg:px-16 py-2 sm:py-3 lg:py-4 top-0 fixed w-full z-50">
+    <nav className="navbar justify-between flex px-4 sm:px-8 lg:px-16 py-2 sm:py-3 lg:py-4 top-0 fixed w-full z-50 bg-white/70 backdrop-blur-lg backdrop-saturate-150">
       {/* Logo */}
       <div>
         <Link
@@ -43,7 +43,7 @@ const Navbar = () => {
         >
           <div className="flex items-center">
             {/* Logo Image - responsive size */}
-            <img src={logo} className="w-14 sm:w-16 lg:w-20" alt="BEM Logo" />
+            <img src={logo} className="w-14 sm:w-16" alt="BEM Logo" />
 
             {/* Text - hidden on small screens, shown on medium+ */}
             <div className="self-center ml-2 sm:ml-3 lg:ml-4 hidden sm:block">
@@ -170,11 +170,11 @@ const Navbar = () => {
 
       {/* Sidebar (Mobile Menu) */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white text-[#636363] transform ${
+        className={`fixed top-0 right-0 h-screen w-64 bg-white text-[#636363] transform ${
           isMenu ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-300 ease-in-out shadow-lg z-50`}
       >
-        <div className="flex flex-col p-6">
+        <div className="flex flex-col p-6 bg-white">
           {/* Close Button */}
           <div className="flex justify-end mb-8">
             <button

@@ -107,7 +107,7 @@ export default function PeopleSayAboutUs() {
   }
 
   return (
-    <section className="py-16 bg-gradient-to-r from-white to-[#fff6f3]">
+    <section className="px-4 sm:px-8 lg:px-16 py-16">
       <div className="max-w-[1400px] mx-auto px-6">
         <div className="flex items-center justify-between mb-6">
           <div>
@@ -152,6 +152,7 @@ export default function PeopleSayAboutUs() {
           ))}
         </div>
       </div>
+      <div className="circlePosition w-[260px] h-[200px] bg-[#4A0000] rounded-full absolute z-1 top-[10%] right-[5%] -translate-x-1/2 -translate-y-1/2 blur-[300px]"></div>
     </section>
   );
 }
