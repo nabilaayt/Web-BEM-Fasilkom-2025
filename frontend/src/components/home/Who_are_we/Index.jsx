@@ -8,10 +8,10 @@ const Who_are_we = () => {
   return (
     <section
       id="who-are-we"
-      className="flex text-sm md:text-lg flex-col md:flex-row items-center justify-between gap-10 px-4 sm:px-8 lg:px-16 py-20"
+      className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-between gap-10 px-4 sm:px-6 lg:px-10 py-20 max-w-[1400px] mx-auto"
     >
       {/* Bagian Kiri (Gambar) */}
-      <div className="relative flex flex-col md:flex-row items-center justify-center gap-6 flex-shrink-0">
+      <div className="relative flex flex-col md:flex-row items-center justify-center gap-6 max-[718px]:gap-[4.5rem] flex-shrink-0">
         {/* Gambar kiri */}
         <img
           src={PotoKiri}
@@ -35,7 +35,7 @@ const Who_are_we = () => {
       </div>
 
       {/* Bagian Kanan (Teks) */}
-      <div className="max-w-xl flex-shrink-0 font-gotham-book text-[#3E3E3E] text-center md:text-left">
+      <div className="max-w-xl flex-shrink-0 font-gotham-book text-[#3E3E3E] text-center md:text-justify">
         <h2 className="text-3xl font-gotham-bold md:text-5xl font-bold mb-4 text-[#030303]">
           Who <span className="text-[#C2421B]">Are</span> We?
         </h2>
