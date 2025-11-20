@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const MemberCard = ({ name, position, imageUrl, label = 'DINAS' }) => {
   return (
-    <div className="relative rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 w-[200px]">
+    <div className="relative rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 w-[140px] md:w-[200px]">
       {/* Pure Image Display - preserve original aspect ratio */}
       <div className="relative w-full rounded-lg overflow-hidden">
         <img

@@ -6,7 +6,6 @@ import ProtectedRoute from "./utils/ProtectedRoute";
 import Homepage from "./pages/homepage";
 import About from "./pages/aboutuspage";
 import Login from "./pages/Login";
-import DinasProfilePage from "./pages/DinasProfilePage";
 import ProfilePage from "./pages/ProfilePage";
 
 import Navbar from "./components/N_F/Navbar/Navbar";
@@ -68,14 +67,7 @@ function App() {
             </PublicLayout>
           }
         />
-        <Route
-          path="/dinas/:dinasId"
-          element={
-            <PublicLayout>
-              <DinasProfilePage />
-            </PublicLayout>
-          }
-        />
+
         {/* Profile Routes - NEW UNIFIED SYSTEM */}
         <Route
           path="/profile"
