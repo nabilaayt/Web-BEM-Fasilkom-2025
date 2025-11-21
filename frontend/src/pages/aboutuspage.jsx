@@ -28,6 +28,7 @@ const AboutUsPage = () => {
           alt="filosofi-mobile"
           className="w-full px-5 sm:px-8 py-2 mb-10 md:hidden pl-9 scale-110"
         />
+                  <div className="circlePosition w-[260px] h-[200px] bg-[#FBBF6A] rounded-full absolute z-1 top-[80%] left-[10%] -translate-x-1/2 -translate-y-1/2 blur-[260px]"></div>
       </div>
     </main>
   );

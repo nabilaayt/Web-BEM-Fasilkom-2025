@@ -76,7 +76,7 @@ const ProfileHero = ({
     "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=600&h=400&fit=crop";
 
   return (
-    <section className="relative px-4 sm:px-8 lg:px-16 py-12 md:py-20 overflow-hidden">
+    <section className="relative pt-10 md:pt-12 pb-8 md:pb-12 px-4 sm:px-8 lg:px-16 bg-white animate-scale">
       <div className="container mx-auto px-4 max-w-[1400px]">
         {/* === Mosaic Grid dengan CSS Grid - Responsive === */}
         <div className="relative w-full mb-12">

@@ -77,7 +77,7 @@ const ProfilePage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen overflow-x-hidden bg-white">
       {/* Shared Profile Hero */}
       <ProfileHero />
 
