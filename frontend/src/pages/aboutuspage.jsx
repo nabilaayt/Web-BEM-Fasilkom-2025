@@ -15,7 +15,7 @@ const AboutUsPage = () => {
         <AboutUsHero />
         <AboutBem />
         <VisiMisi />
-        <br /><h2 className="text-center py-6 md:py:16 text-2xl md:text-4xl font-bold md:mb-10 font-gotham-bold">
+        <h2 className="text-center py-2 text-2xl md:text-4xl font-bold md:mb-10 font-gotham-bold">
           Filosofi Logo <span className="text-[#4A0000]">Artha Darma</span>
         </h2><br />
         <img
@@ -26,7 +26,7 @@ const AboutUsPage = () => {
         <img
           src={FilosofiMobile}
           alt="filosofi-mobile"
-          className="w-full px-5 sm:px-8 py-2 mb-10 md:hidden scale-110"
+          className="w-full px-5 sm:px-8 py-2 mb-10 md:hidden pl-9 scale-110"
         />
       </div>
     </main>

@@ -91,7 +91,7 @@ const Navbar = () => {
       </div>
 
       {/* Normal Navbar */}
-      <div className="navbar-nav flex text-[#4a0000]">
+      <div className="navbar-nav flex">
         <NavLink
           to="/"
           className={({ isActive }) =>
@@ -140,16 +140,16 @@ const Navbar = () => {
             BEM APPS
           </button>
           {isDropdownOpen && (
-            <div className="absolute top-full left-0 mt-2 w-44 bg-white rounded shadow-lg z-50">
+            <div className="font-gotham-book text-[#636363] absolute top-full left-0 mt-2 w-44 bg-white rounded shadow-lg z-50">
               <a
                 href="https://gaspol.bemilkomunsri.org/"
-                className="block px-4 py-2 hover:bg-gray-100 text-sm"
+                className="block px-4 py-2 hover:bg-gray-100 text-sm hover:text-[#4a0000]"
               >
                 GASPOL
               </a>
               <a
                 href="https://ilkomnews.bemilkomunsri.org/"
-                className="block px-4 py-2 hover:bg-gray-100 text-sm"
+                className="block px-4 py-2 hover:bg-gray-100 text-sm hover:text-[#4a0000]"
               >
                 ILKOM NEWS
               </a>
@@ -196,7 +196,7 @@ const Navbar = () => {
                   `font-gotham-book text-base transition-colors ${
                     isActive
                       ? "text-[#4a0000] font-gotham-medium font-semibold"
-                      : "text-[#636363] hover:text-[#4a0000]"
+                      : "text-[#636363] font-gotham-book hover:text-[#4a0000]"
                   }`
                 }
               >
@@ -213,7 +213,7 @@ const Navbar = () => {
                 BEM APPS {isDropdownMobileOpen ? "▴" : "▾"}
               </button>
               {isDropdownMobileOpen && (
-                <div className="ml-4 mt-3 flex flex-col space-y-3">
+                <div className="font-gotham-book ml-4 mt-3 flex flex-col space-y-3">
                   <a
                     href="https://gaspol.bemilkomunsri.org/"
                     className="text-sm text-[#636363] hover:text-[#4a0000] transition-colors"

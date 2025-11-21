@@ -12,7 +12,7 @@ const hero = () => {
       {/* ===== TEKS UTAMA ===== */}
       <h2 className="text-base md:text-3xl font-gotham-bold text-black mb-2">
         Tumbuh <span className="text-[#4a0000]">Bersama</span> Wujudkan{" "}
-        <span className="text-[#C2421B] font-semibold">Asa</span>
+        <span className="text-[#FD8F17] font-semibold">Asa</span>
       </h2>
 
       <h1
